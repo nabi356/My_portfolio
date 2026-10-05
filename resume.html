@@ -2,72 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>K. Nabidul Hasan — Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>K. Nabidul Hasan — Resume Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    body{background:transparent;color:#fff;padding:32px;font-family:Inter,Arial,sans-serif}
-    .container{max-width:900px;margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:28px;border-radius:12px}
-    h1{margin:0 0 8px}
-    .meta{opacity:0.85;margin-bottom:18px}
-    .section{margin-bottom:18px}
-    .section h3{margin:0 0 8px}
-    ul{margin:8px 0 0 18px}
-    pre{white-space:pre-wrap;background:transparent;border:none}
+    body {
+      background-color: #060709;
+      color: #f3f4f8;
+      padding: 40px 20px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .resume-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: rgba(18, 22, 33, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+    }
+    .header-section {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .meta {
+      color: #9da3b4;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .gold {
+      color: #f5d77f;
+      font-weight: 600;
+    }
+    .res-section {
+      margin-bottom: 28px;
+    }
+    h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: #f5d77f;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h3::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(245, 215, 127, 0.2);
+    }
+    ul {
+      margin-left: 20px;
+      color: #9da3b4;
+      line-height: 1.8;
+    }
+    li strong {
+      color: #fff;
+    }
+    .download-bar {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>K. Nabidul Hasan</h1>
-    <div class="meta">B.Tech (4th sem) — Marwadi University • CGPA: 9.33 • Anantapur, Andhra Pradesh • dancernabi@gmail.com • +91 80743 43395</div>
+  <div class="resume-container">
+    <div class="header-section">
+      <h1>K. Nabidul Hasan</h1>
+      <div class="meta">
+        B.Tech Computer Science (5th semester) — <span class="gold">Marwadi University, Gujarat</span> • CGPA: <strong class="gold">9.46</strong><br>
+        Rajkot, Gujarat &amp; Anantapur, Andhra Pradesh • <a href="mailto:dancernabi@gmail.com" class="gold">dancernabi@gmail.com</a> • +91 80743 43395
+      </div>
+    </div>
 
-    <div class="section">
+    <div class="res-section">
       <h3>Profile</h3>
-      <p>Focused B.Tech Computer Science student with strong fundamentals in C/C++, JavaScript and Python. Experienced in building responsive front-end interfaces and console utilities. Seeking internships in software development.</p>
+      <p style="color:#9da3b4; line-height: 1.7;">
+        High-achieving B.Tech Computer Science student with exceptional fundamentals in Data Structures, Algorithms, C/C++, JavaScript, and Python. Experienced in building responsive web applications, CLI utilities, and AI workflows. Actively seeking software engineering internships.
+      </p>
     </div>
 
-    <div class="section">
-      <h3>Skills</h3>
-      <ul>
-        <li>C, C++</li>
-        <li>JavaScript, HTML, CSS</li>
-        <li>Python</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h3>Projects (selected)</h3>
-      <ul>
-        <li>Amazon Clone — responsive HTML/CSS UI (see Projects section)</li>
-        <li>Imaginary Avatar Web — themed gallery (see Projects section)</li>
-        <li>Calculator (C) — interactive CLI calculator (calc.c)</li>
-        <li>Progress Bars Demo (C) — terminal progress simulation (progressbar.c)</li>
-        <li>Sudoku Drawer (C) — grid printer/validator (suduko.c)</li>
-      </ul>
-    </div>
-
-    <div class="section">
+    <div class="res-section">
       <h3>Education</h3>
       <ul>
-        <li>B.Tech in Computer Science — Marwadi University, Gujarat (4th semester) • CGPA: 9.33</li>
-        <li>Intermediate — Narayana Junior College, Anantapur — 923 / 1000</li>
-        <li>10th Standard — Lakshmi English Medium High School, Anantapur — 545 / 600</li>
+        <li><strong>B.Tech in Computer Science &amp; Engineering:</strong> Marwadi University, Gujarat (5th Semester) — <span class="gold">CGPA: 9.46</span></li>
+        <li><strong>Intermediate (MPC):</strong> Narayana Junior College, Anantapur — <span class="gold">923 / 1000 (92.3%)</span></li>
+        <li><strong>10th Standard (SSC):</strong> Lakshmi English Medium High School, Anantapur — <span class="gold">545 / 600 (90.8%)</span></li>
+        <li><strong>JEE (National Entrance):</strong> <span class="gold">76th Percentile</span></li>
       </ul>
     </div>
 
-    <div class="section">
-      <h3>Certifications</h3>
+    <div class="res-section">
+      <h3>Technical Skills</h3>
       <ul>
-        <li>HTML Certificate, CSS Certificate, Python Certificate, GIT & GitHub, Figma Bootcamp and many more (see Certifications section)</li>
+        <li><strong>Languages:</strong> C, C++, JavaScript (ES6+), Python, HTML5, CSS3</li>
+        <li><strong>Web &amp; Ecosystem:</strong> Node.js, REST APIs, Git, GitHub, Figma UI/UX</li>
+        <li><strong>Emerging &amp; AI:</strong> IBM RAG (Retrieval Augmented Generation), AI Agents (n8n), Prompt Engineering, Machine Learning foundations</li>
       </ul>
     </div>
 
-    <div class="section">
-      <h3>Hobbies & Interests</h3>
-      <p>Dancing, playing cricket, watching movies, public speaking, and mentoring peers.</p>
+    <div class="res-section">
+      <h3>Key Projects</h3>
+      <ul>
+        <li><strong>HOPE — Geo-Skill Matching Platform:</strong> Dynamic networking web application connecting talent by proximity and skills.</li>
+        <li><strong>Amazon Clone Storefront:</strong> High-fidelity responsive e-commerce user interface with departmental filtering and banners.</li>
+        <li><strong>Imaginary Avatar Web:</strong> Themed avatar showcase built with modern CSS transitions and fluid layouts.</li>
+        <li><strong>C Systems Suite:</strong> Interactive CLI Calculator (<code>calc.c</code>), Terminal Progress Bar Simulator (<code>progressbar.c</code>), and Sudoku Matrix Engine (<code>suduko.c</code>).</li>
+      </ul>
     </div>
 
-    <div style="margin-top:20px">Download: <a class="btn outline" href="Nabidul%20Hasan%20CV.pdf" download>Download PDF</a></div>
+    <div class="res-section">
+      <h3>Certifications &amp; Honors</h3>
+      <ul>
+        <li><strong>Won Prize in Project Exhibition — AI Utsav:</strong> University-wide AI exhibition conducted at Marwadi University recognizing applied AI innovation and systems implementation.</li>
+        <li><strong>Childhood Reality Show Winner:</strong> Prestigious televised performance show honor fostering creative discipline and audience composure.</li>
+        <li><strong>13+ Professional Certifications:</strong> IBM RAG, AI Agents with n8n, Node.js REST APIs, Python, Git/GitHub, Figma Bootcamp, Prompt Engineering, C Language, Design Thinking.</li>
+      </ul>
+    </div>
+
+    <div class="download-bar">
+      <a href="index.html" class="btn btn-outline">← Back to Portfolio</a>
+      <a class="btn btn-primary" href="Nabidul%20Hasan%20CV.pdf" download>Download Official CV (PDF)</a>
+    </div>
   </div>
 </body>
 </html>
