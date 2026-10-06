@@ -1,317 +1,1489 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>K. Nabidul Hasan | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K. Nabidul Hasan | Software Engineer &amp; Designer Portfolio</title>
+  <meta name="description" content="Portfolio of K. Nabidul Hasan — B.Tech Computer Science Student at Marwadi University (CGPA 9.46), Aspiring Software Engineer, Full-Stack Developer & Designer." />
+  <meta name="keywords" content="K. Nabidul Hasan, Software Engineer, Marwadi University, B.Tech CSE, Web Developer, Portfolio, Algorithms, Python, JavaScript, C++" />
+  <meta name="author" content="K. Nabidul Hasan" />
 
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- GSAP -->
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- GSAP & ScrollTrigger for high-performance fluid animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
+
 <body>
+  <!-- Custom Futuristic Ambient Cursor (Desktop only) -->
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
 
-<div class="cursor"></div>
-
-<!-- decorative 3D background -->
-<div class="bg-3d" aria-hidden="true">
-  <span class="blob b1"></span>
-  <span class="blob b2"></span>
-  <span class="blob b3"></span>
-  <span class="blob b4"></span>
-  <span class="blob b5"></span>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <p class="hello">Hello! I am <span>K. Nabidul Hasan</span></p>
-
-    <h1 class="title">
-      B.Tech Student &amp;<br>
-      Aspiring Software Engineer<br>
-      with a passion for <span class="cover">design &amp; code</span>
-    </h1>
-
-    <p class="subtext">
-      Currently in the 5th semester of B.Tech at <strong>Marwadi University, Gujarat</strong> with a CGPA of <strong>9.46</strong>. Passionate about programming, design, and competitive problem solving.
-    </p>
-
-    <h2 class="role">B.Tech Student</h2>
-    <p class="company">
-      Studying at <span>Marwadi University, Gujarat</span> — 5th semester • CGPA: <strong>9.46</strong>
-    </p>
-
-    <div class="buttons">
-      <a href="#projects" class="btn primary">View Projects</a>
-      <a href="Nabidul%20Hasan%20CV.pdf" class="btn outline" download>Download Resume</a>
-    </div>
+  <!-- Background Ambient Mesh and Glow Spheres -->
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-noise"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <div class="bg-grid"></div>
   </div>
 
-  <div class="hero-right">
-    <div class="avatar-wrap" aria-hidden="false">
-      <img src="assets/avatar_person.png" alt="Avatar of K. Nabidul Hasan">
-    </div>
-  </div>
-</section>
+  <!-- STICKY / FIXED FUTURISTIC NAVIGATION -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand" aria-label="K. Nabidul Hasan Home">
+        <span class="brand-monogram">KNH</span>
+        <span class="brand-name">K. Nabidul Hasan</span>
+      </a>
 
-<!-- ABOUT -->
-<section class="section">
-  <h3>About Me</h3>
-  <p class="text">
-    I am <strong>K. Nabidul Hasan</strong>, a focused B.Tech Computer Science student at <strong>Marwadi University</strong> (4th semester) with a CGPA of <strong>9.33</strong>. I build reliable software and user-focused interfaces and am actively seeking internships in software development or frontend engineering.
-  </p>
-  <ul class="highlights">
-    <li><strong>Technical skills:</strong> C, C++, JavaScript, HTML/CSS, Python , git , git hub , Machine learning</li>
-    <li><strong>Leadership & Communication:</strong> Event lead, public speaker, mentor</li>
-    <li><strong>Key achievements:</strong> Winner of a childhood reality show; Intermediate marks 923/1000; 10th marks 545/600; JEE: 76th percentile</li>
-    <li><strong>Languages:</strong> English, Hindi, Telugu</li>
-  </ul>
-  <p class="cta">Open to internships &amp; collaborative projects — contact me via <a href="mailto:dancernabi@gmail.com">email</a> or <a href="https://www.linkedin.com/in/nabi-dulhasan-928380325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
-</section>
-<!-- SKILLS -->
-<section class="section">
-  <h3>Skills</h3>
-  <div class="skills">
-    <div class="skill" aria-label="C">
-      <div class="lang-icon" title="C">
-        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><rect width="48" height="48" rx="8" fill="#0b69b3"/><text x="24" y="30" font-size="18" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif">C</text></svg>
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav CTA & Mobile Menu Toggle -->
+      <div class="nav-actions">
+        <a href="Nabidul%20Hasan%20CV.pdf" class="nav-cta-btn" download aria-label="Download Resume PDF">
+          <span>Resume</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </a>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="toggle-line"></span>
+          <span class="toggle-line"></span>
+          <span class="toggle-line"></span>
+        </button>
       </div>
-      <p class="skill-label">C</p>
     </div>
 
-    <div class="skill" aria-label="C++">
-      <div class="lang-icon" title="C++">
-        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><rect width="48" height="48" rx="8" fill="#0b69b3"/><text x="18" y="30" font-size="14" font-weight="700" fill="#ffffff" font-family="Inter, Arial, sans-serif">C++</text></svg>
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-inner">
+        <a href="#home" class="mobile-nav-link">Home</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#skills" class="mobile-nav-link">Skills</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#experience" class="mobile-nav-link">Experience</a>
+        <a href="#education" class="mobile-nav-link">Education</a>
+        <a href="#achievements" class="mobile-nav-link">Achievements</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+        <div class="mobile-drawer-footer">
+          <a href="Nabidul%20Hasan%20CV.pdf" class="btn btn-primary w-full" download>
+            <span>Download Resume (PDF)</span>
+          </a>
+        </div>
       </div>
-      <p class="skill-label">C++</p>
     </div>
+  </header>
 
-    <div class="skill" aria-label="JavaScript">
-      <div class="lang-icon" title="JavaScript">
-        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><rect width="48" height="48" rx="8" fill="#f0db4f"/><text x="24" y="32" font-size="16" font-weight="700" text-anchor="middle" fill="#323330" font-family="Inter, Arial, sans-serif">JS</text></svg>
-      </div>
-      <p class="skill-label">JavaScript</p>
-    </div>
-
-    <div class="skill" aria-label="HTML & CSS">
-      <div class="lang-icon" title="HTML & CSS">
-        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><rect width="48" height="48" rx="8" fill="#e44d26"/><text x="24" y="28" font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif">HTML</text><text x="24" y="38" font-size="10" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif">CSS</text></svg>
-      </div>
-      <p class="skill-label">HTML / CSS</p>
-    </div>
-
-    <div class="skill" aria-label="Python">
-      <div class="lang-icon" title="Python">
-        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><rect width="48" height="48" rx="8" fill="#306998"/><text x="24" y="30" font-size="14" font-weight="700" text-anchor="middle" fill="#ffd43b" font-family="Inter, Arial, sans-serif">Py</text></svg>
-      </div>
-      <p class="skill-label">Python</p>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="section">
-  <h3>Experience & Activities</h3>
-  <div class="timeline">
-    <div class="item">
-      <h4>Event Lead — Dance Society</h4>
-      <p>Organised and led campus performances and rehearsals; managed teams of 10+ and coordinated logistics.</p>
-    </div>
-    <div class="item">
-      <h4>Public Speaker & Mentor</h4>
-      <p>Working as English speaking club Co ordinator , Conducted workshops and speaking sessions for juniors on communication, interview prep and small-group mentoring.</p>
-    </div>
-  </div>
-</section>
-
-<!-- HOBBIES -->
-<section class="section">
-  <h3>Hobbies &amp; Interests</h3>
-  <p class="text">Dancing, playing cricket, watching movies,travelling ,learning , spending time with friends. I regularly participate in dance events and enjoy team activities that build collaboration and leadership.</p>
-</section>
-
-<!-- EDUCATION -->
-<section class="section">
-  <h3>Education</h3>
-  <div class="edu-grid">
-    <div class="edu-card">
-      <h4>B.Tech in Computer Science</h4>
-      <p class="meta">Marwadi University, Gujarat — 4th semester</p>
-      <p class="meta">CGPA: <strong>9.46</strong></p>
-      <p class="small">Relevant coursework: Data Structures, Algorithms, Web Development, Database Systems</p>
-    </div>
-
-    <div class="edu-card">
-      <h4>Intermediate</h4>
-      <p class="meta">Narayana Junior College, Anantapur</p>
-      <p class="meta">Marks: <strong>923 / 1000</strong></p>
-    </div>
-
-    <div class="edu-card">
-      <h4>10th Standard</h4>
-      <p class="meta">Lakshmi English Medium High School, Anantapur</p>
-      <p class="meta">Marks: <strong>545 / 600</strong></p>
-    </div>
-
-    <div class="edu-card">
-      <h4>JEE</h4>
-      <p class="meta">Score: <strong>76th percentile</strong></p>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="section" id="projects">
-  <h3>Projects</h3>
-  <div class="cards">
-    <div class="card">
-      <h4>Amazon Clone (HTML/CSS)</h4>
-      <p class="small">Responsive Amazon-inspired UI built with HTML and CSS — product grid, hero banner, and navigation.</p>
-      <a class="btn outline" href="html%20programmes/AMAZON_CLONE/PROJECT_FINAL_2.html" target="_blank" rel="noopener">View Project</a>
-    </div>
-
-    <div class="card">
-      <h4>Imaginary Avatar Web</h4>
-      <p class="small">A stylized avatar showcase built with HTML/CSS — gallery layout and responsive imagery.</p>
-      <a class="btn outline" href="html%20programmes/AVATAR/PROJECT_FINAL_1.html" target="_blank" rel="noopener">View Project</a>
-    </div>
-
-    <div class="card">
-      <h4>HOPE</h4>
-      <p class="small">HOPE bridges the gap between skilled individuals by dynamically connecting people, events, and challenges based on exact geographic proximity and mutually overlapping skills.</p>
-      <a class="btn outline" href="https://hope-tau-khaki.vercel.app/" target="_blank" rel="noopener noreferrer">Open HOPE</a>
-    </div>
-
-    <div class="card">
-      <h4>C Projects Collection</h4>
-      <p class="small">Console-based C programs demonstrating algorithms, terminal UI, and file handling.</p>
-      <ul class="project-list">
-        <li>
-          <strong>Calculator</strong> — <em>calc.c</em>: Interactive calculator (add/sub/mul/div/power/modulus).
-          <div class="project-actions">
-            <button class="btn outline view-source" data-file="cprojects/calc.c">View Source</button>
-            <a class="btn outline" href="cprojects/calc.c" download>Download</a>
+  <main>
+    <!-- HERO SECTION / OPENING SCREEN (THREE-PART COMPOSITION) -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        
+        <!-- LEFT SIDE: Introduction -->
+        <div class="hero-col hero-left">
+          <div class="badge-status">
+            <span class="status-pulse"></span>
+            <span>Available for SDE Internships</span>
           </div>
-        </li>
-        <li>
-          <strong>Progress Bars Demo</strong> — <em>progressbar.c</em>: CLI app that simulates task progress bars and uses terminal control for updates.
-          <div class="project-actions">
-            <button class="btn outline view-source" data-file="cprojects/progressbar.c">View Source</button>
-            <a class="btn outline" href="cprojects/progressbar.c" download>Download</a>
+
+          <p class="hero-hello">
+            Hello! I am <span class="gold-accent-name">K. Nabidul Hasan</span>
+          </p>
+
+          <h1 class="hero-main-title">
+            B.Tech Student &amp;<br>
+            <span class="white-glow-text">Aspiring Software Engineer</span><br>
+            with a passion for <span class="gold-gradient-text">design &amp; code</span>
+          </h1>
+
+          <!-- Rolling Animated Roles Banner -->
+          <div class="hero-roles-roller" aria-label="Dynamic Professional Roles">
+            <span class="roller-tag">
+              <span class="roller-dot"></span>
+              <span class="roller-prefix">Roles:</span>
+            </span>
+            <div class="roller-viewport">
+              <div class="roller-track" id="roller-track">
+                <div class="roller-item"><span class="roller-item-text">Software Engineer</span></div>
+                <div class="roller-item"><span class="roller-item-text">Full-Stack Web Developer</span></div>
+                <div class="roller-item"><span class="roller-item-text">AI Agents &amp; Workflows Builder</span></div>
+                <div class="roller-item"><span class="roller-item-text">Competitive Problem Solver</span></div>
+                <div class="roller-item"><span class="roller-item-text">UI/UX Designer</span></div>
+                <div class="roller-item"><span class="roller-item-text">C / C++ Systems Developer</span></div>
+                <!-- Duplicate first item for seamless loop -->
+                <div class="roller-item"><span class="roller-item-text">Software Engineer</span></div>
+              </div>
+            </div>
           </div>
-        </li>
-        <li>
-          <strong>Sudoku Drawer</strong> — <em>suduko.c</em>: Prints Sudoku grids and includes validation helpers (work-in-progress).
-          <div class="project-actions">
-            <button class="btn outline view-source" data-file="cprojects/suduko.c">View Source</button>
-            <a class="btn outline" href="cprojects/suduko.c" download>Download</a>
+
+          <div class="hero-highlights">
+            <div class="highlight-chip">
+              <span class="chip-icon">✦</span>
+              <span>Full-Stack Architecture</span>
+            </div>
+            <div class="highlight-chip">
+              <span class="chip-icon">✦</span>
+              <span>Competitive Problem Solving</span>
+            </div>
+            <div class="highlight-chip">
+              <span class="chip-icon">✦</span>
+              <span>Intuitive UI/UX Vision</span>
+            </div>
           </div>
-        </li>
-      </ul>
-      <p class="small">Open-source code available in the `cprojects` folder. Run locally with a C compiler (e.g., <code>gcc calc.c -o calc</code>).</p>
+        </div>
+
+        <!-- CENTER: 3D Floating Avatar with Futuristic White Glow -->
+        <div class="hero-col hero-center">
+          <div class="avatar-stage" id="avatar-stage">
+            <!-- White Glowing Spotlight Behind Avatar -->
+            <div class="avatar-white-halo" aria-hidden="true"></div>
+            <div class="avatar-gold-flare" aria-hidden="true"></div>
+
+            <!-- Concentric Futuristic Orbital Rings -->
+            <div class="avatar-orbit orbit-outer" aria-hidden="true"></div>
+            <div class="avatar-orbit orbit-inner" aria-hidden="true"></div>
+
+            <!-- 3D Frameless Holographic Person Container -->
+            <div class="avatar-card-3d avatar-frameless-person" id="avatar-card">
+              <div class="avatar-image-wrapper">
+                <img src="assets/avatar_person.png" alt="K. Nabidul Hasan - Software Engineer Portrait" class="avatar-img" id="avatar-img" />
+              </div>
+            </div>
+
+            <!-- Floating 3D Depth Badges -->
+            <div class="floating-tag tag-sde" id="tag-sde">
+              <span class="tag-gem">✦</span>
+              <div class="tag-meta">
+                <span class="tag-strong">Software Engineer</span>
+                <span class="tag-dim">B.Tech CSE</span>
+              </div>
+            </div>
+
+            <div class="floating-tag tag-univ" id="tag-univ">
+              <span class="tag-gem gold">★</span>
+              <div class="tag-meta">
+                <span class="tag-strong gold">CGPA 9.46</span>
+                <span class="tag-dim">Marwadi Univ</span>
+              </div>
+            </div>
+
+            <!-- Ground Shadow for True 3D Depth Perception -->
+            <div class="avatar-ground-shadow" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE: About / Quick Introduction & Actions -->
+        <div class="hero-col hero-right">
+          <div class="hero-info-card">
+            <div class="info-card-header">
+              <span class="card-eyebrow">QUICK INTRODUCTION</span>
+              <span class="card-indicator"></span>
+            </div>
+
+            <p class="hero-summary-text">
+              Currently in the 5th semester of B.Tech at <strong class="text-white">Marwadi University, Gujarat</strong> with a CGPA of <strong class="gold-text">9.46</strong>. Passionate about programming, design, and competitive problem solving.
+            </p>
+
+            <div class="hero-education-box">
+              <h2 class="hero-role-title">B.Tech Student</h2>
+              <p class="hero-institution">
+                Studying at <span class="gold-highlight">Marwadi University, Gujarat</span> — 5th semester • CGPA: <strong>9.46</strong>
+              </p>
+            </div>
+
+            <!-- Metric Badges -->
+            <div class="hero-metrics-grid">
+              <div class="metric-item">
+                <div class="metric-val" data-counter="9.46" data-decimals="2">9.46</div>
+                <div class="metric-lbl">CGPA</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-val" data-counter="5">5th</div>
+                <div class="metric-lbl">Semester</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-val" data-counter="13" data-suffix="+">13+</div>
+                <div class="metric-lbl">Certifications</div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <span>View Projects</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <a href="Nabidul%20Hasan%20CV.pdf" class="btn btn-outline" download>
+                <span>Download Resume</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT ME -->
+    <section class="section-wrapper" id="about">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">// 01. PROFILE</span>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">Bridging computational logic and human-centered design principles.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Main Narrative Column -->
+          <div class="about-main glass-panel">
+            <h3 class="about-lead">
+              I am <span class="gold-gradient-text">K. Nabidul Hasan</span>, an ambitious Computer Science student engineered for impact.
+            </h3>
+            <p class="about-p">
+              Currently pursuing my B.Tech at <strong>Marwadi University, Gujarat</strong> with a top-tier CGPA of <strong>9.46</strong>. My approach unites robust algorithmic thinking with modern visual craftsmanship. I build software that is not only functionally resilient, but also visually intuitive and delightful to interact with.
+            </p>
+            <p class="about-p">
+              I am actively seeking software engineering and development internships where I can contribute to mission-critical codebases, solve complex algorithmic challenges, and collaborate with cross-functional teams.
+            </p>
+
+            <div class="about-key-highlights">
+              <h4 class="highlights-title">Core Competencies &amp; Distinction:</h4>
+              <ul class="highlights-list">
+                <li>
+                  <span class="bullet-gold">✦</span>
+                  <div><strong>Technical Breadth:</strong> Proficient in C, C++, JavaScript (ES6+), Python, HTML5/CSS3, Git/GitHub, REST APIs, and Machine Learning foundations.</div>
+                </li>
+                <li>
+                  <span class="bullet-gold">✦</span>
+                  <div><strong>Leadership &amp; Communication:</strong> University Dance Society Event Lead, English Speaking Club Coordinator, active public speaker, and peer mentor.</div>
+                </li>
+                <li>
+                  <span class="bullet-gold">✦</span>
+                  <div><strong>Academic &amp; Competitive Track Record:</strong> Childhood Reality Show Winner; Intermediate score of 923/1000; 10th Standard score of 545/600; JEE 76th percentile.</div>
+                </li>
+                <li>
+                  <span class="bullet-gold">✦</span>
+                  <div><strong>Multilingual Fluency:</strong> Professional proficiency in English, Hindi, and Telugu.</div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="about-cta-line">
+              <span>Ready for high-impact engineering — let's connect via</span>
+              <a href="mailto:dancernabi@gmail.com" class="link-inline">Email</a>
+              <span>or</span>
+              <a href="https://www.linkedin.com/in/nabi-dulhasan-928380325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="link-inline">LinkedIn</a>.
+            </div>
+          </div>
+
+          <!-- Quick Persona & Values Column -->
+          <div class="about-sidebar">
+            <div class="glass-panel personality-card">
+              <div class="card-icon-header">
+                <div class="icon-ring">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <h4 class="sidebar-title">Engineering Mindset</h4>
+              </div>
+              <ul class="value-pills">
+                <li class="value-item">
+                  <span class="value-badge">Clean Code</span>
+                  <span class="value-desc">Modular, self-documenting &amp; performant</span>
+                </li>
+                <li class="value-item">
+                  <span class="value-badge">Problem Solver</span>
+                  <span class="value-desc">Analytical breakdown of complex systems</span>
+                </li>
+                <li class="value-item">
+                  <span class="value-badge">Design Sensibility</span>
+                  <span class="value-desc">Eye for micro-interactions &amp; aesthetics</span>
+                </li>
+                <li class="value-item">
+                  <span class="value-badge">Continuous Learner</span>
+                  <span class="value-desc">Rapid adoption of emerging tech &amp; AI</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="glass-panel hobbies-card">
+              <div class="card-icon-header">
+                <div class="icon-ring gold">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"></path>
+                  </svg>
+                </div>
+                <h4 class="sidebar-title">Interests &amp; Energy</h4>
+              </div>
+              <p class="sidebar-p">
+                Dancing with competitive discipline, playing cricket, cinematic storytelling, travelling to explore diverse cultures, and continuous technical deep dives with peers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTINUOUS ROLLING BANNER: ROLLING FROM LEFT TO RIGHT -->
+    <div class="rolling-ticker-bar" aria-hidden="true">
+      <div class="rolling-ticker-track roll-left-to-right">
+        <div class="rolling-ticker-content">
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>RETRIEVAL AUGMENTED GENERATION</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>FULL-STACK WEB ARCHITECTURE</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>MARWADI UNIVERSITY CGPA 9.46</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>C / C++ SYSTEMS PROGRAMMING</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>AI AGENTS WITH N8N</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>COMPETITIVE PROBLEM SOLVING</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>FIGMA DESIGN SYSTEMS</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>WON AI UTSAV PROJECT EXHIBITION</span>
+        </div>
+        <div class="rolling-ticker-content" aria-hidden="true">
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>RETRIEVAL AUGMENTED GENERATION</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>FULL-STACK WEB ARCHITECTURE</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>MARWADI UNIVERSITY CGPA 9.46</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>C / C++ SYSTEMS PROGRAMMING</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>AI AGENTS WITH N8N</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>COMPETITIVE PROBLEM SOLVING</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>FIGMA DESIGN SYSTEMS</span>
+          <span class="rolling-ticker-item"><span class="ticker-gem">✦</span>WON AI UTSAV PROJECT EXHIBITION</span>
+        </div>
+      </div>
     </div>
 
-    <div class="card">
-      <h4>Resume (PDF)</h4>
-      <p class="small">Download or view my up-to-date resume (PDF).</p>
-      <a class="btn outline" href="resume.html" target="_blank" rel="noopener">View Resume</a>
-      <a class="btn outline" href="Nabidul%20Hasan%20CV.pdf" download>Download</a>
+    <!-- SECTION 3: SKILLS -->
+    <section class="section-wrapper" id="skills">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">// 02. TECHNICAL ARSENAL</span>
+          <h2 class="section-title">Technical Skills</h2>
+          <p class="section-subtitle">A curated toolset spanning core systems programming, modern web tech, and emerging AI tools.</p>
+        </div>
+
+        <div class="pillars-arena">
+          
+          <!-- Master Control Toolbar -->
+          <div class="pillars-toolbar glass-panel">
+            <div class="toolbar-status">
+              <span class="pillar-status-dot"></span>
+              <span class="toolbar-title">Twin 3D Cylindrical Rollers</span>
+              <span class="toolbar-desc">— Controlled with Touchpad (2-finger swipe), mouse drag, or buttons</span>
+            </div>
+            <div class="toolbar-actions">
+              <button class="btn btn-sm btn-outline roll-sync-btn" id="roll-both-btn" type="button" aria-label="Roll Both Cylinders">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                <span>Roll Both Rollers</span>
+              </button>
+              <button class="btn btn-sm btn-subtle autoroll-toggle" id="autoroll-toggle-btn" type="button" aria-label="Toggle Auto Roll">
+                <span id="autoroll-icon">⏸</span>
+                <span id="autoroll-text">Auto-Roll: Active</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="pillars-grid">
+            
+            <!-- ROLLER 1: CORE PROGRAMMING LANGUAGES -->
+            <div class="round-pillar pillar-solar" id="pillar-core" data-pillar="core">
+              <div class="pillar-header">
+                <div class="pillar-eyebrow">
+                  <span class="pillar-beacon gold"></span>
+                  <span class="pillar-num">3D CYLINDER ROLLER // 01</span>
+                </div>
+                <h3 class="pillar-heading">Core Programming Languages</h3>
+                <div class="pillar-front-pill gold-pill">
+                  <span class="front-pill-label">FRONT FOCUS:</span>
+                  <span class="front-pill-val" id="pillar-core-name">C Language</span>
+                </div>
+              </div>
+
+              <!-- 3D Carousel Stage (Open & Reflective as in photo) -->
+              <div class="carousel-3d-stage" id="stage-core" tabindex="0" role="region" aria-label="3D Core Skills Carousel. Swipe with two fingers on touchpad or drag with mouse to spin.">
+                <div class="stage-floor-reflection gold-floor"></div>
+                <div class="carousel-3d-ring" id="cylinder-core">
+                  <!-- 5 SKILL CARDS IN 3D (Clean, Portrait, Reflective) -->
+                  <div class="carousel-card is-front" data-index="0" data-name="C Language">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container c-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="C Logo">
+                        <rect width="48" height="48" rx="12" fill="#0b69b3" />
+                        <text x="24" y="31" font-size="20" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">C</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">C Language</h4>
+                      <p class="card-tag">Systems &amp; Memory</p>
+                    </div>
+                    <div class="card-pill">Core Systems</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="1" data-name="C++">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container cpp-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="C++ Logo">
+                        <rect width="48" height="48" rx="12" fill="#00599c" />
+                        <text x="24" y="30" font-size="16" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">C++</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">C++</h4>
+                      <p class="card-tag">DSA &amp; OOP Logic</p>
+                    </div>
+                    <div class="card-pill">Algorithms</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="2" data-name="JavaScript (ES6+)">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container js-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JavaScript Logo">
+                        <rect width="48" height="48" rx="12" fill="#f0db4f" />
+                        <text x="24" y="32" font-size="18" font-weight="700" text-anchor="middle" fill="#323330" font-family="'Space Grotesk', sans-serif">JS</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">JavaScript</h4>
+                      <p class="card-tag">Interactive &amp; Async</p>
+                    </div>
+                    <div class="card-pill">ES6+ Dynamic</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="3" data-name="Python">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container py-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Python Logo">
+                        <rect width="48" height="48" rx="12" fill="#295375" />
+                        <path d="M24 10c-5.5 0-5.1 2.4-5.1 2.4l.01 2.5h5.3v.8H16.8s-3.5-.4-3.5 5.1 3 5 3 5h1.8v-2.5s-.1-3 3-3h5.2s2.9-.1 2.9-2.9V13s.5-3-5.2-3zm-1.5 1.7a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm1.7 26.3c5.5 0 5.1-2.4 5.1-2.4l-.01-2.5h-5.3v-.8h7.4s3.5.4 3.5-5.1-3-5-3-5h-1.8v2.5s.1 3-3 3h-5.2s-2.9.1-2.9 2.9v3.4s-.5 3 5.2 3zm1.5-1.7a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" fill="#ffd43b"/>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">Python</h4>
+                      <p class="card-tag">Automation &amp; ML</p>
+                    </div>
+                    <div class="card-pill">Data &amp; Scripting</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="4" data-name="HTML5 &amp; CSS3">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container html-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HTML/CSS Logo">
+                        <rect width="48" height="48" rx="12" fill="#e44d26" />
+                        <text x="24" y="25" font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">HTML</text>
+                        <text x="24" y="37" font-size="11" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">CSS3</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">HTML5 &amp; CSS3</h4>
+                      <p class="card-tag">Semantic &amp; Glass UI</p>
+                    </div>
+                    <div class="card-pill">Modern Styling</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Controls for Roller 1 -->
+              <div class="pillar-controls">
+                <button class="pillar-roll-btn prev-btn" data-target="core" aria-label="Roll Core Pillar Backward">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  <span>Roll Left</span>
+                </button>
+                <div class="pillar-dots" id="dots-core">
+                  <button class="p-dot active" data-pillar="core" data-idx="0" aria-label="Jump to C Language"></button>
+                  <button class="p-dot" data-pillar="core" data-idx="1" aria-label="Jump to C++"></button>
+                  <button class="p-dot" data-pillar="core" data-idx="2" aria-label="Jump to JavaScript"></button>
+                  <button class="p-dot" data-pillar="core" data-idx="3" aria-label="Jump to Python"></button>
+                  <button class="p-dot" data-pillar="core" data-idx="4" aria-label="Jump to HTML5 &amp; CSS3"></button>
+                </div>
+                <button class="pillar-roll-btn next-btn" data-target="core" aria-label="Roll Core Pillar Forward">
+                  <span>Roll Right</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+              <div class="pillar-hint">
+                <span class="touchpad-hint-tag">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"></rect><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="12" x2="12" y2="20"></line></svg>
+                  <span>Touchpad: Swipe with 2 fingers or drag to roll</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- ROLLER 2: MODERN ECOSYSTEM & EMERGING TECH -->
+            <div class="round-pillar pillar-cyan" id="pillar-modern" data-pillar="modern">
+              <div class="pillar-header">
+                <div class="pillar-eyebrow">
+                  <span class="pillar-beacon cyan"></span>
+                  <span class="pillar-num">3D CYLINDER ROLLER // 02</span>
+                </div>
+                <h3 class="pillar-heading">Modern Ecosystem &amp; AI</h3>
+                <div class="pillar-front-pill cyan-pill">
+                  <span class="front-pill-label">FRONT FOCUS:</span>
+                  <span class="front-pill-val" id="pillar-modern-name">Node.js &amp; REST APIs</span>
+                </div>
+              </div>
+
+              <!-- 3D Carousel Stage (Open & Reflective as in photo) -->
+              <div class="carousel-3d-stage" id="stage-modern" tabindex="0" role="region" aria-label="3D Modern Skills Carousel. Swipe with two fingers on touchpad or drag with mouse to spin.">
+                <div class="stage-floor-reflection cyan-floor"></div>
+                <div class="carousel-3d-ring" id="cylinder-modern">
+                  <!-- 5 SKILL CARDS IN 3D (Clean, Portrait, Reflective) -->
+                  <div class="carousel-card is-front" data-index="0" data-name="Node.js &amp; REST APIs">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container node-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Node &amp; REST APIs">
+                        <rect width="48" height="48" rx="12" fill="#3c873a" />
+                        <text x="24" y="30" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">API</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">Node.js / APIs</h4>
+                      <p class="card-tag">Backend Services</p>
+                    </div>
+                    <div class="card-pill">Server Runtime</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="1" data-name="Git &amp; GitHub">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container git-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Git Logo">
+                        <rect width="48" height="48" rx="12" fill="#f05032" />
+                        <path d="M33.2 21.6l-6.8-6.8a2 2 0 0 0-2.8 0l-9.6 9.6a2 2 0 0 0 0 2.8l6.8 6.8a2 2 0 0 0 2.8 0l9.6-9.6a2 2 0 0 0 0-2.8z" fill="#ffffff"/>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">Git &amp; GitHub</h4>
+                      <p class="card-tag">Version Control</p>
+                    </div>
+                    <div class="card-pill">Collaboration</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="2" data-name="AI Agents (n8n)">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container ai-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI Agents">
+                        <rect width="48" height="48" rx="12" fill="#ff6b6b" />
+                        <text x="24" y="30" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">AI</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">AI Agents (n8n)</h4>
+                      <p class="card-tag">Autonomous Workflows</p>
+                    </div>
+                    <div class="card-pill">Automation</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="3" data-name="IBM RAG &amp; Prompting">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container rag-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="IBM RAG">
+                        <rect width="48" height="48" rx="12" fill="#0f62fe" />
+                        <text x="24" y="30" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">RAG</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">IBM RAG</h4>
+                      <p class="card-tag">Gen-AI Applications</p>
+                    </div>
+                    <div class="card-pill">LLM &amp; Vectors</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="4" data-name="Figma UI/UX">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container figma-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Figma Logo">
+                        <rect width="48" height="48" rx="12" fill="#1e1e1e" />
+                        <circle cx="24" cy="24" r="10" fill="#a259ff" />
+                        <circle cx="24" cy="14" r="5" fill="#f24e1e" />
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">Figma UI/UX</h4>
+                      <p class="card-tag">Design Systems</p>
+                    </div>
+                    <div class="card-pill">Prototyping</div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Interactive Controls for Roller 2 -->
+              <div class="pillar-controls">
+                <button class="pillar-roll-btn prev-btn" data-target="modern" aria-label="Roll Modern Pillar Backward">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  <span>Roll Left</span>
+                </button>
+                <div class="pillar-dots" id="dots-modern">
+                  <button class="p-dot active" data-pillar="modern" data-idx="0" aria-label="Jump to Node.js"></button>
+                  <button class="p-dot" data-pillar="modern" data-idx="1" aria-label="Jump to Git &amp; GitHub"></button>
+                  <button class="p-dot" data-pillar="modern" data-idx="2" aria-label="Jump to AI Agents"></button>
+                  <button class="p-dot" data-pillar="modern" data-idx="3" aria-label="Jump to IBM RAG"></button>
+                  <button class="p-dot" data-pillar="modern" data-idx="4" aria-label="Jump to Figma UI/UX"></button>
+                </div>
+                <button class="pillar-roll-btn next-btn" data-target="modern" aria-label="Roll Modern Pillar Forward">
+                  <span>Roll Right</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+              <div class="pillar-hint">
+                <span class="touchpad-hint-tag">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"></rect><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="12" x2="12" y2="20"></line></svg>
+                  <span>Touchpad: Swipe with 2 fingers or drag to roll</span>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PROJECTS -->
+    <section class="section-wrapper" id="projects">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">// 03. FEATURED WORK</span>
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">Real-world applications and algorithmic programs built with speed and precision.</p>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- PROJECT 1: HOPE (Featured Web Platform) -->
+          <div class="project-card glass-panel featured-project">
+            <div class="project-top">
+              <div class="project-meta-row">
+                <span class="project-badge gold-badge">Featured Platform</span>
+                <span class="project-date">Full-Stack App</span>
+              </div>
+              <h3 class="project-title">HOPE — Geo-Skill Matching Network</h3>
+              <p class="project-desc">
+                An innovative web platform bridging skilled individuals, hackathons, and local developer challenges by dynamically matching profiles through exact geographic proximity and mutually overlapping skill vectors.
+              </p>
+            </div>
+            
+            <div class="project-bottom">
+              <div class="tech-tags">
+                <span class="tag">Next.js / Web</span>
+                <span class="tag">Geolocation</span>
+                <span class="tag">RESTful API</span>
+                <span class="tag">UI/UX</span>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-primary" href="https://hope-tau-khaki.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <span>Open HOPE App</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: Amazon Clone -->
+          <div class="project-card glass-panel">
+            <div class="project-top">
+              <div class="project-meta-row">
+                <span class="project-badge">Frontend Storefront</span>
+                <span class="project-date">UI Architecture</span>
+              </div>
+              <h3 class="project-title">Amazon Clone Storefront</h3>
+              <p class="project-desc">
+                High-fidelity, responsive Amazon-inspired e-commerce interface built using pure HTML5 and modern CSS3. Features authentic responsive product grids, sub-navigation bar, and promo banners.
+              </p>
+            </div>
+            
+            <div class="project-bottom">
+              <div class="tech-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3 Grid</span>
+                <span class="tag">Responsive UI</span>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-outline" href="html%20programmes/AMAZON_CLONE/PROJECT_FINAL_2.html" target="_blank" rel="noopener">
+                  <span>View Project</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: Imaginary Avatar Web -->
+          <div class="project-card glass-panel">
+            <div class="project-top">
+              <div class="project-meta-row">
+                <span class="project-badge">Visual Showcase</span>
+                <span class="project-date">Animation &amp; Layout</span>
+              </div>
+              <h3 class="project-title">Imaginary Avatar Web</h3>
+              <p class="project-desc">
+                A stylized avatar gallery and visual showcase with custom CSS keyframes, interactive framing, and fluid layouts for digital identity exploration.
+              </p>
+            </div>
+            
+            <div class="project-bottom">
+              <div class="tech-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS Keyframes</span>
+                <span class="tag">Visual Arts</span>
+              </div>
+              <div class="project-actions">
+                <a class="btn btn-outline" href="html%20programmes/AVATAR/PROJECT_FINAL_1.html" target="_blank" rel="noopener">
+                  <span>View Project</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 4: C Projects Suite (Interactive Source Modal) -->
+          <div class="project-card glass-panel project-span-2">
+            <div class="project-top">
+              <div class="project-meta-row">
+                <span class="project-badge gold-badge">Systems &amp; CLI</span>
+                <span class="project-date">Algorithms &amp; Terminal</span>
+              </div>
+              <h3 class="project-title">C Systems &amp; Algorithmic Tools Collection</h3>
+              <p class="project-desc">
+                High-performance terminal programs in pure C demonstrating memory safety, terminal control sequences, ANSI escape codes, and algorithmic grid computations.
+              </p>
+
+              <div class="c-projects-list">
+                <div class="c-item glass-subpanel">
+                  <div class="c-item-info">
+                    <span class="c-tag">calc.c</span>
+                    <h4 class="c-item-title">Interactive Multi-Op Calculator</h4>
+                    <p class="c-item-sub">Addition, subtraction, multiplication, division, exponentiation, and modulus with division-by-zero checks.</p>
+                  </div>
+                  <div class="c-item-actions">
+                    <button class="btn btn-sm btn-outline view-source" data-file="cprojects/calc.c" data-title="Calculator (calc.c)">View Source</button>
+                    <a class="btn btn-sm btn-subtle" href="cprojects/calc.c" download>Download .c</a>
+                  </div>
+                </div>
+
+                <div class="c-item glass-subpanel">
+                  <div class="c-item-info">
+                    <span class="c-tag">progressbar.c</span>
+                    <h4 class="c-item-title">Multi-Task Terminal Progress Simulator</h4>
+                    <p class="c-item-sub">Real-time asynchronous ANSI cursor control simulation displaying multiple concurrent task progress bars.</p>
+                  </div>
+                  <div class="c-item-actions">
+                    <button class="btn btn-sm btn-outline view-source" data-file="cprojects/progressbar.c" data-title="Progress Bar Demo (progressbar.c)">View Source</button>
+                    <a class="btn btn-sm btn-subtle" href="cprojects/progressbar.c" download>Download .c</a>
+                  </div>
+                </div>
+
+                <div class="c-item glass-subpanel">
+                  <div class="c-item-info">
+                    <span class="c-tag">suduko.c</span>
+                    <h4 class="c-item-title">Sudoku Matrix Engine &amp; Validator</h4>
+                    <p class="c-item-sub">9x9 multi-dimensional array puzzle renderer with sub-grid bounding checks and row/column move validation.</p>
+                  </div>
+                  <div class="c-item-actions">
+                    <button class="btn btn-sm btn-outline view-source" data-file="cprojects/suduko.c" data-title="Sudoku Engine (suduko.c)">View Source</button>
+                    <a class="btn btn-sm btn-subtle" href="cprojects/suduko.c" download>Download .c</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-bottom">
+              <div class="tech-tags">
+                <span class="tag">Pure C</span>
+                <span class="tag">Algorithms</span>
+                <span class="tag">CLI Controls</span>
+                <span class="tag">GCC Ready</span>
+              </div>
+              <div class="compile-tip">
+                <code>gcc calc.c -o calc &amp;&amp; ./calc</code>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Credentials & Resume Banner Strip -->
+        <div class="projects-resume-bar glass-panel">
+          <div class="resume-bar-info">
+            <span class="project-badge gold-badge">Verified Credentials</span>
+            <h4 class="resume-bar-title">Curriculum Vitae &amp; Academic Transcripts</h4>
+            <p class="resume-bar-desc">Explore verified academic credentials, complete project methodologies, leadership roles, and honors.</p>
+          </div>
+          <div class="resume-bar-actions">
+            <a class="btn btn-outline" href="resume.html" target="_blank" rel="noopener">
+              <span>View Online CV</span>
+            </a>
+            <a class="btn btn-primary" href="Nabidul%20Hasan%20CV.pdf" download>
+              <span>Download PDF</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: EXPERIENCE & LEADERSHIP (ROLLING FROM LEFT TO RIGHT) -->
+    <section class="section-wrapper rolling-section" id="experience">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">// 04. LEADERSHIP &amp; ACTIVITIES</span>
+          <h2 class="section-title">Experience &amp; Leadership</h2>
+          <p class="section-subtitle">Driving student engagement, public speaking mentorship, and cultural productions.</p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-track"></div>
+
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-meta">
+                <span class="timeline-role">Event Lead — Campus Dance Society</span>
+                <span class="timeline-org gold-text">Marwadi University</span>
+              </div>
+              <p class="timeline-desc">
+                Organized and orchestrated major campus performances and rehearsals. Managed cross-functional teams of 10+ performers and coordinated all production logistics, staging, and creative choreography under high-tempo timelines.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Team Leadership</span>
+                <span class="tag">Event Production</span>
+                <span class="tag">Logistics Management</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-meta">
+                <span class="timeline-role">Public Speaker &amp; Peer Mentor</span>
+                <span class="timeline-org gold-text">English Speaking Club Coordinator</span>
+              </div>
+              <p class="timeline-desc">
+                Serving as the English Speaking Club Coordinator. Directed interactive workshops and public speaking simulations for junior cohorts focusing on professional articulation, technical interview preparation, and confidence building.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Public Speaking</span>
+                <span class="tag">Interview Coaching</span>
+                <span class="tag">Peer Mentorship</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: EDUCATION (3D FLIPPING SECTION) -->
+    <section class="section-wrapper flipping-section" id="education">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">// 05. ACADEMIC FOUNDATION</span>
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">Rigorous computer science curriculum and top-percentile academic track record.</p>
+        </div>
+
+        <div class="education-grid">
+          
+          <!-- Card 1: B.Tech -->
+          <div class="edu-card glass-panel edu-featured">
+            <div class="edu-header">
+              <div class="edu-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <span class="edu-status-tag">Current Degree</span>
+            </div>
+            <h3 class="edu-degree">B.Tech in Computer Science &amp; Engineering</h3>
+            <p class="edu-school">Marwadi University, Rajkot, Gujarat</p>
+            <div class="edu-stats-row">
+              <div class="edu-stat">
+                <span class="stat-big gold-text">9.46</span>
+                <span class="stat-small">Cumulative CGPA</span>
+              </div>
+              <div class="edu-stat">
+                <span class="stat-big">5th</span>
+                <span class="stat-small">Current Semester</span>
+              </div>
+            </div>
+            <p class="edu-coursework">
+              <strong>Core Coursework:</strong> Data Structures &amp; Algorithms, Object Oriented Programming (C++/Java), Web Engineering, Database Management Systems, Computer Networks, Operating Systems.
+            </p>
+          </div>
+
+          <!-- Card 2: Intermediate -->
+          <div class="edu-card glass-panel">
+            <div class="edu-header">
+              <div class="edu-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              </div>
+              <span class="edu-status-tag">Higher Secondary</span>
+            </div>
+            <h3 class="edu-degree">Intermediate (MPC)</h3>
+            <p class="edu-school">Narayana Junior College, Anantapur</p>
+            <div class="edu-stats-row">
+              <div class="edu-stat">
+                <span class="stat-big gold-text">923 / 1000</span>
+                <span class="stat-small">Score (92.3%)</span>
+              </div>
+            </div>
+            <p class="edu-coursework">
+              Focus in Advanced Mathematics, Physics, and Chemistry analytical foundations.
+            </p>
+          </div>
+
+          <!-- Card 3: 10th Standard -->
+          <div class="edu-card glass-panel">
+            <div class="edu-header">
+              <div class="edu-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </div>
+              <span class="edu-status-tag">Secondary School</span>
+            </div>
+            <h3 class="edu-degree">Secondary School Certificate (Class X)</h3>
+            <p class="edu-school">Lakshmi English Medium High School, Anantapur</p>
+            <div class="edu-stats-row">
+              <div class="edu-stat">
+                <span class="stat-big gold-text">545 / 600</span>
+                <span class="stat-small">Score (90.8%)</span>
+              </div>
+            </div>
+            <p class="edu-coursework">
+              Distinction in Mathematics, Science, and English communication.
+            </p>
+          </div>
+
+          <!-- Card 4: JEE -->
+          <div class="edu-card glass-panel">
+            <div class="edu-header">
+              <div class="edu-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 6 12 12 16 14"></polygon></svg>
+              </div>
+              <span class="edu-status-tag">National Examination</span>
+            </div>
+            <h3 class="edu-degree">JEE (Joint Entrance Exam)</h3>
+            <p class="edu-school">National Testing Agency (NTA)</p>
+            <div class="edu-stats-row">
+              <div class="edu-stat">
+                <span class="stat-big gold-text">76th</span>
+                <span class="stat-small">National Percentile</span>
+              </div>
+            </div>
+            <p class="edu-coursework">
+              Rigorous national evaluation testing problem-solving velocity and quantitative aptitude.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: ACHIEVEMENTS & CERTIFICATIONS (JUMPING & GLOWING SECTION) -->
+    <section class="section-wrapper jumping-section glowing-section" id="achievements">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow glowing-eyebrow">// 06. CREDENTIALS &amp; HONORS</span>
+          <h2 class="section-title">Achievements &amp; Certifications</h2>
+          <p class="section-subtitle">Verified university honors, high-impact AI exhibition prizes, and professional credentials.</p>
+        </div>
+
+        <!-- Spotlight Honors Grid: AI Utsav Prize & Reality Winner (Calm & Balanced) -->
+        <div class="spotlight-honors-grid">
+          
+          <!-- Spotlight Card 1: AI Utsav Exhibition Winner -->
+          <div class="honor-card glass-panel ai-utsav-card glowing-card">
+            <div class="honor-top-row">
+              <div class="winner-icon-wrap">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="gold-text">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                  <path d="M4 22h16"></path>
+                  <path d="M10 14.66V17c0 .55-.45 1-1 1H7"></path>
+                  <path d="M14 14.66V17c0 .55.45 1 1 1h2"></path>
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                </svg>
+              </div>
+              <div class="winner-badge-box">
+                <span class="winner-badge gold-badge">🏆 University Prize Winner</span>
+                <span class="honor-org-tag">Marwadi University</span>
+              </div>
+            </div>
+            <div class="winner-info">
+              <h3 class="winner-title">Won Prize in Project Exhibition — AI Utsav</h3>
+              <p class="winner-desc">
+                Awarded top honors in the competitive Project Exhibition at <strong>AI Utsav</strong>, hosted at <strong>Marwadi University</strong>. Evaluated and commended by faculty and AI specialists for innovative system architecture, engineering rigor, and real-world applicability.
+              </p>
+              <div class="honor-tags">
+                <span class="tag">AI Exhibition Winner</span>
+                <span class="tag">Marwadi University</span>
+                <span class="tag">Applied AI Project</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spotlight Card 2: Childhood Reality Show Winner -->
+          <div class="honor-card glass-panel reality-winner-card glowing-card">
+            <div class="honor-top-row">
+              <div class="winner-icon-wrap">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="gold-text">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              </div>
+              <div class="winner-badge-box">
+                <span class="winner-badge">⭐ Personal Honor</span>
+                <span class="honor-org-tag">Televised Performance</span>
+              </div>
+            </div>
+            <div class="winner-info">
+              <h3 class="winner-title">Childhood Reality Show Winner</h3>
+              <p class="winner-desc">
+                Won a prestigious televised childhood reality performance show. This formative milestone ingrained early creative discipline, composure under high-pressure spotlight conditions, and authentic audience engagement.
+              </p>
+              <div class="honor-tags">
+                <span class="tag">State / Regional Winner</span>
+                <span class="tag">Stage Composure</span>
+                <span class="tag">Creative Excellence</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sleek Category Filter Bar (Solves Over-wrapping & Visual Overwhelm) -->
+        <div class="cert-filter-bar" role="tablist" aria-label="Certifications Category Filter">
+          <button class="cert-tab-btn active" data-filter="all" role="tab" aria-selected="true">
+            <span>All Credentials</span>
+            <span class="tab-count">16</span>
+          </button>
+          <button class="cert-tab-btn" data-filter="ai" role="tab" aria-selected="false">
+            <span>AI &amp; Automation</span>
+            <span class="tab-count">4</span>
+          </button>
+          <button class="cert-tab-btn" data-filter="dev" role="tab" aria-selected="false">
+            <span>Full-Stack &amp; Systems</span>
+            <span class="tab-count">6</span>
+          </button>
+          <button class="cert-tab-btn" data-filter="design" role="tab" aria-selected="false">
+            <span>Design &amp; Innovation</span>
+            <span class="tab-count">4</span>
+          </button>
+          <button class="cert-tab-btn" data-filter="foundations" role="tab" aria-selected="false">
+            <span>Foundations</span>
+            <span class="tab-count">2</span>
+          </button>
+        </div>
+
+        <!-- Certifications Grid with Verified PDF Links -->
+        <div class="certs-grid" id="certs-grid">
+          
+          <!-- IBM RAG -->
+          <div class="cert-card glass-panel" data-category="ai">
+            <div class="cert-top">
+              <span class="cert-badge">IBM</span>
+              <h4 class="cert-name">IBM Retrieval Augmented Generation</h4>
+              <p class="cert-desc">RAG architectures for enterprise LLMs &amp; vector search.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/IBM%20RETRIEVAL%20AUGMENTED%20CERTIFICATE.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- AI Agents n8n -->
+          <div class="cert-card glass-panel" data-category="ai">
+            <div class="cert-top">
+              <span class="cert-badge gold-badge">Automation</span>
+              <h4 class="cert-name">AI Agents Using n8n</h4>
+              <p class="cert-desc">Building autonomous multi-step agentic workflows &amp; tool chaining.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/AI%20AGENTS%20USING%20N8N.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Node.js REST APIs -->
+          <div class="cert-card glass-panel" data-category="dev">
+            <div class="cert-top">
+              <span class="cert-badge">Backend</span>
+              <h4 class="cert-name">Create REST APIs with Node.js</h4>
+              <p class="cert-desc">API endpoints, routing, error handling &amp; JSON protocols.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/Create%20REST%20APls%20with%20Node.js.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Python -->
+          <div class="cert-card glass-panel" data-category="dev">
+            <div class="cert-top">
+              <span class="cert-badge">Programming</span>
+              <h4 class="cert-name">Python Programming Certification</h4>
+              <p class="cert-desc">Data manipulation, scripts, logic structures &amp; OOP principles.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/PYTHONN%20CERTIFICATE.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Git & GitHub -->
+          <div class="cert-card glass-panel" data-category="dev">
+            <div class="cert-top">
+              <span class="cert-badge">DevOps</span>
+              <h4 class="cert-name">Git &amp; GitHub Version Control</h4>
+              <p class="cert-desc">Branching workflows, merge conflict resolution &amp; collaboration.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/GIT%20AND%20GIT%20HUB.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Figma Bootcamp -->
+          <div class="cert-card glass-panel" data-category="design">
+            <div class="cert-top">
+              <span class="cert-badge">Design</span>
+              <h4 class="cert-name">Figma UI/UX Bootcamp</h4>
+              <p class="cert-desc">Design systems, auto-layout, wireframing &amp; interactive prototypes.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/Figma%20Bootcamp.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- C Language -->
+          <div class="cert-card glass-panel" data-category="dev">
+            <div class="cert-top">
+              <span class="cert-badge">Systems</span>
+              <h4 class="cert-name">C Language Programming</h4>
+              <p class="cert-desc">Pointers, memory management, file I/O &amp; algorithm design.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/c%20language%20certificate.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- HTML5 -->
+          <div class="cert-card glass-panel" data-category="dev">
+            <div class="cert-top">
+              <span class="cert-badge">Frontend</span>
+              <h4 class="cert-name">HTML5 Web Architecture</h4>
+              <p class="cert-desc">Modern semantic markup, accessibility (a11y) &amp; SEO structuring.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/html%20certificate.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- CSS3 -->
+          <div class="cert-card glass-panel" data-category="dev">
+            <div class="cert-top">
+              <span class="cert-badge">Frontend</span>
+              <h4 class="cert-name">CSS3 Styling &amp; Responsive Layouts</h4>
+              <p class="cert-desc">Flexbox, CSS Grid, media queries &amp; custom animations.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/css%20certificate.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Prompt Engineering -->
+          <div class="cert-card glass-panel" data-category="ai">
+            <div class="cert-top">
+              <span class="cert-badge gold-badge">GenAI</span>
+              <h4 class="cert-name">Prompt Engineering Mastery</h4>
+              <p class="cert-desc">Chain-of-thought, few-shot prompting, and model conditioning.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/prompt%20engineering.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Ethical GenAI -->
+          <div class="cert-card glass-panel" data-category="ai">
+            <div class="cert-top">
+              <span class="cert-badge">Ethics</span>
+              <h4 class="cert-name">Ethical Considerations of Gen-AI</h4>
+              <p class="cert-desc">Bias mitigation, safety bounds, and transparency in AI software.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/ethical%20considerations%20of%20generative%20ai.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Design Thinking -->
+          <div class="cert-card glass-panel" data-category="design">
+            <div class="cert-top">
+              <span class="cert-badge">Strategy</span>
+              <h4 class="cert-name">Design Thinking Methodology</h4>
+              <p class="cert-desc">Empathy mapping, problem framing, ideation &amp; user testing.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/design%20thinking.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Digital Electronics -->
+          <div class="cert-card glass-panel" data-category="foundations">
+            <div class="cert-top">
+              <span class="cert-badge">Hardware</span>
+              <h4 class="cert-name">Digital Electronic Circuits</h4>
+              <p class="cert-desc">Boolean logic, combinational gates &amp; micro-architecture fundamentals.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/Digital%20Electronic%20Circuits.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- IDEA to Deployment -->
+          <div class="cert-card glass-panel" data-category="design">
+            <div class="cert-top">
+              <span class="cert-badge gold-badge">Full-Cycle</span>
+              <h4 class="cert-name">Idea to Deployment (Vibe Coding)</h4>
+              <p class="cert-desc">Rapid prototyping, versioning, automated builds &amp; cloud deploy.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/IDEA%20TO%20DEPLOYMENT%20VIBE%20CODING.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Turn Ideas into Profitable -->
+          <div class="cert-card glass-panel" data-category="design">
+            <div class="cert-top">
+              <span class="cert-badge">Business</span>
+              <h4 class="cert-name">Turn Ideas into Profitable Products</h4>
+              <p class="cert-desc">Product-market fit, user acquisition &amp; software economics.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/Turn%20Ideas%20into%20Profitable.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Resume Building -->
+          <div class="cert-card glass-panel" data-category="foundations">
+            <div class="cert-top">
+              <span class="cert-badge">Career</span>
+              <h4 class="cert-name">Professional Resume Building</h4>
+              <p class="cert-desc">ATS optimization and career articulation for tech roles.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="certificates%20Nabi/RESUME%20BUILDING.pdf" target="_blank" rel="noopener">
+              <span>View Certificate (PDF)</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: CONTACT -->
+    <section class="section-wrapper" id="contact">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">// 07. GET IN TOUCH</span>
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">Have a project, internship opportunity, or question? Let's connect.</p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Direct Channels Column -->
+          <div class="contact-channels">
+            <div class="channel-card glass-panel" id="copy-email-card">
+              <div class="channel-icon-wrap email">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="channel-details">
+                <span class="channel-label">Direct Email</span>
+                <a href="mailto:dancernabi@gmail.com" class="channel-val">dancernabi@gmail.com</a>
+              </div>
+              <button class="channel-copy-btn" data-copy="dancernabi@gmail.com" aria-label="Copy Email">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+
+            <div class="channel-card glass-panel" id="copy-phone-card">
+              <div class="channel-icon-wrap phone">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div class="channel-details">
+                <span class="channel-label">Phone &amp; WhatsApp</span>
+                <a href="tel:+918074343395" class="channel-val">+91 80743 43395</a>
+              </div>
+              <button class="channel-copy-btn" data-copy="+918074343395" aria-label="Copy Phone">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+
+            <div class="channel-card glass-panel">
+              <div class="channel-icon-wrap linkedin">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </div>
+              <div class="channel-details">
+                <span class="channel-label">LinkedIn Profile</span>
+                <a href="https://www.linkedin.com/in/nabi-dulhasan-928380325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="channel-val">linkedin.com/in/nabi-dulhasan</a>
+              </div>
+            </div>
+
+            <div class="channel-card glass-panel">
+              <div class="channel-icon-wrap github">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 10.5 19V22"/>
+                </svg>
+              </div>
+              <div class="channel-details">
+                <span class="channel-label">GitHub Repositories</span>
+                <a href="https://github.com/nabi356" target="_blank" rel="noopener noreferrer" class="channel-val">github.com/nabi356</a>
+              </div>
+            </div>
+
+            <!-- Status Card -->
+            <div class="internship-status-box glass-panel">
+              <div class="status-indicator-dot"></div>
+              <div class="status-text-block">
+                <h5 class="status-title">Current Status: Available</h5>
+                <p class="status-sub">Actively seeking Software Engineer internships &amp; collaborative full-stack projects for 2026/2027.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form Column -->
+          <div class="contact-form-wrap glass-panel">
+            <h3 class="form-title">Send a Direct Message</h3>
+            <p class="form-subtitle">Fill out the form below and I'll get back to you within 24 hours.</p>
+
+            <form class="futuristic-form" id="contact-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="form-name">Your Full Name</label>
+                  <input type="text" id="form-name" name="name" placeholder="John Doe" required autocomplete="name" />
+                </div>
+                <div class="form-field">
+                  <label for="form-email">Email Address</label>
+                  <input type="email" id="form-email" name="email" placeholder="john@example.com" required autocomplete="email" />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="form-subject">Subject</label>
+                <input type="text" id="form-subject" name="subject" placeholder="Software Engineering Internship / Inquiry" required />
+              </div>
+
+              <div class="form-field">
+                <label for="form-message">Message</label>
+                <textarea id="form-message" name="message" rows="5" placeholder="Hello Nabidul, I would love to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit w-full" id="submit-btn">
+                <span class="submit-text">Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+
+              <div class="form-feedback" id="form-feedback" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-monogram">KNH</span>
+          <div>
+            <h4 class="footer-brand-title">K. Nabidul Hasan</h4>
+            <p class="footer-brand-sub">B.Tech Student &amp; Aspiring Software Engineer</p>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <a href="#home" class="back-to-top" aria-label="Back to top">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2026 <strong>K. Nabidul Hasan</strong>. Crafted with Obsidian Glassmorphism &amp; Futuristic Gold Aesthetics.
+        </p>
+        <p class="location-tag">Rajkot, Gujarat &amp; Anantapur, Andhra Pradesh, India</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CODE PREVIEW MODAL (For C Projects) -->
+  <div id="code-modal" class="code-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="code-modal-backdrop" id="modal-backdrop"></div>
+    <div class="code-modal-content glass-panel">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-lang-badge">C Source</span>
+          <h4 id="modal-title" class="modal-heading">Code Preview</h4>
+        </div>
+        <div class="modal-header-actions">
+          <button class="btn btn-sm btn-subtle" id="modal-copy-btn">Copy Code</button>
+          <a class="btn btn-sm btn-outline download-link" id="modal-download-btn" download>Download .c</a>
+          <button class="modal-close-btn" id="modal-close-btn" aria-label="Close code preview">×</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <pre><code id="modal-code" class="code-block"></code></pre>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- CERTIFICATIONS -->
-<section class="section">
-  <h3>Certifications</h3>
-  <div class="cards">
-    <div class="card"><h4>HTML Certificate</h4><a class="btn outline" href="certificates%20Nabi/html%20certificate.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>CSS Certificate</h4><a class="btn outline" href="certificates%20Nabi/css%20certificate.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>Python Certificate</h4><a class="btn outline" href="certificates%20Nabi/PYTHONN%20CERTIFICATE.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>GIT &amp; GitHub</h4><a class="btn outline" href="certificates%20Nabi/GIT%20AND%20GIT%20HUB.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>Figma Bootcamp</h4><a class="btn outline" href="certificates%20Nabi/Figma%20Bootcamp.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>AI Agents — n8n</h4><a class="btn outline" href="certificates%20Nabi/AI%20AGENTS%20USING%20N8N.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>C Language Certificate</h4><a class="btn outline" href="certificates%20Nabi/c%20language%20certificate.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>Create REST APIs with Node.js</h4><a class="btn outline" href="certificates%20Nabi/Create%20REST%20APls%20with%20Node.js.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>Design Thinking</h4><a class="btn outline" href="certificates%20Nabi/design%20thinking.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>Digital Electronic Circuits</h4><a class="btn outline" href="certificates%20Nabi/Digital%20Electronic%20Circuits.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>Ethical Considerations of Gen-AI</h4><a class="btn outline" href="certificates%20Nabi/ethical%20considerations%20of%20generative%20ai.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>IBM Retrieval Augmented Certificate</h4><a class="btn outline" href="certificates%20Nabi/IBM%20RETRIEVAL%20AUGMENTED%20CERTIFICATE.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>IDEA to Deployment</h4><a class="btn outline" href="certificates%20Nabi/IDEA%20TO%20DEPLOYMENT%20VIBE%20CODING.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>Prompt Engineering</h4><a class="btn outline" href="certificates%20Nabi/prompt%20engineering.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>Resume Building</h4><a class="btn outline" href="certificates%20Nabi/RESUME%20BUILDING.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>Turn Ideas into Profitable</h4><a class="btn outline" href="certificates%20Nabi/Turn%20Ideas%20into%20Profitable.pdf" target="_blank" rel="noopener">View</a></div>
-    <div class="card"><h4>AI Agents — Personal ID</h4><a class="btn outline" href="certificates%20Nabi/92460118732__KANUMUKKALA__NABIDUL%20HASAN.pdf" target="_blank" rel="noopener">View</a></div>
-  </div>
-</section>
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toast-container" aria-live="assertive"></div>
 
-<!-- CONTACT -->
-<section class="section contact">
-  <h3>Contact</h3>
-  <div class="contact-grid">
-    <div class="contact-info">
-      <div class="info-card email">
-        <div class="icon" aria-hidden="true">
-          <!-- Email SVG -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.5C3 5.67157 3.67157 5 4.5 5H19.5C20.3284 5 21 5.67157 21 6.5V17.5C21 18.3284 20.3284 19 19.5 19H4.5C3.67157 19 3 18.3284 3 17.5V6.5Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 7.5L12 13L21 7.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <a href="mailto:dancernabi@gmail.com">dancernabi@gmail.com</a>
-        <p class="label">Email</p>
-      </div>
-
-      <div class="info-card phone">
-        <div class="icon" aria-hidden="true">
-          <!-- Phone SVG -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92V20a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3.09a2 2 0 0 1 2 1.72c.12 1.01.38 2 .78 2.92a2 2 0 0 1-.45 2.11L9.91 11.09a16 16 0 0 0 6 6l1.34-1.34a2 2 0 0 1 2.11-.45c.92.4 1.91.66 2.92.78A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <a href="tel:+918074343395">+91 80743 43395</a>
-        <p class="label">Phone</p>
-      </div>
-
-      <div class="info-card linkedin">
-        <div class="icon" aria-hidden="true">
-          <!-- LinkedIn SVG -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" rx="1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <a href="https://www.linkedin.com/in/nabi-dulhasan-928380325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-        <p class="label">LinkedIn</p>
-      </div>
-
-      <div class="info-card github">
-        <div class="icon" aria-hidden="true">
-          <!-- GitHub SVG -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 10.5 19V22" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <a href="https://github.com/nabi356" target="_blank" rel="noopener noreferrer">github.com/nabi356</a>
-        <p class="label">GitHub</p>
-      </div>
-    </div>
-
-    <div class="contact-form">
-      <form>
-        <input type="text" placeholder="Your Name"/>
-        <input type="email" placeholder="Your Email"/>
-        <textarea placeholder="Message"></textarea>
-        <button class="btn primary">Send Message</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- Code preview modal -->
-<div id="code-modal" class="code-modal" aria-hidden="true">
-  <div class="code-modal-backdrop" id="modal-backdrop"></div>
-  <div class="code-modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button class="modal-close-btn" id="modal-close-btn" aria-label="Close">×</button>
-    <h4 id="modal-title"></h4>
-    <pre><code id="modal-code" class="lang-c"></code></pre>
-    <a class="btn outline download-link" id="modal-download-btn" download>Download</a>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <!-- Main JavaScript Controller -->
+  <script src="script.js"></script>
 </body>
+
 </html>
