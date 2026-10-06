@@ -390,169 +390,276 @@
           <p class="section-subtitle">A curated toolset spanning core systems programming, modern web tech, and emerging AI tools.</p>
         </div>
 
-        <div class="skills-catalog">
-          <!-- Category 1: Programming Languages -->
-          <div class="skills-category-group">
-            <h3 class="category-heading">
-              <span class="cat-bullet"></span>
-              Core Programming Languages
-            </h3>
-            <div class="skills-grid">
-              
-              <!-- C -->
-              <div class="skill-tile glass-panel">
-                <div class="skill-icon-wrap c-lang">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="C Logo">
-                    <rect width="48" height="48" rx="10" fill="#0b69b3" />
-                    <text x="24" y="31" font-size="20" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">C</text>
-                  </svg>
-                </div>
-                <div class="skill-details">
-                  <h4 class="skill-name">C Language</h4>
-                  <p class="skill-tag">Systems &amp; Memory</p>
-                </div>
-              </div>
-
-              <!-- C++ -->
-              <div class="skill-tile glass-panel">
-                <div class="skill-icon-wrap cpp-lang">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="C++ Logo">
-                    <rect width="48" height="48" rx="10" fill="#00599c" />
-                    <text x="24" y="30" font-size="16" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">C++</text>
-                  </svg>
-                </div>
-                <div class="skill-details">
-                  <h4 class="skill-name">C++</h4>
-                  <p class="skill-tag">DSA &amp; OOP Logic</p>
-                </div>
-              </div>
-
-              <!-- JavaScript -->
-              <div class="skill-tile glass-panel">
-                <div class="skill-icon-wrap js-lang">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JavaScript Logo">
-                    <rect width="48" height="48" rx="10" fill="#f0db4f" />
-                    <text x="24" y="32" font-size="18" font-weight="700" text-anchor="middle" fill="#323330" font-family="'Space Grotesk', sans-serif">JS</text>
-                  </svg>
-                </div>
-                <div class="skill-details">
-                  <h4 class="skill-name">JavaScript (ES6+)</h4>
-                  <p class="skill-tag">Interactive &amp; Async</p>
-                </div>
-              </div>
-
-              <!-- Python -->
-              <div class="skill-tile glass-panel">
-                <div class="skill-icon-wrap py-lang">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Python Logo">
-                    <rect width="48" height="48" rx="10" fill="#295375" />
-                    <path d="M24 10c-5.5 0-5.1 2.4-5.1 2.4l.01 2.5h5.3v.8H16.8s-3.5-.4-3.5 5.1 3 5 3 5h1.8v-2.5s-.1-3 3-3h5.2s2.9-.1 2.9-2.9V13s.5-3-5.2-3zm-1.5 1.7a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm1.7 26.3c5.5 0 5.1-2.4 5.1-2.4l-.01-2.5h-5.3v-.8h7.4s3.5.4 3.5-5.1-3-5-3-5h-1.8v2.5s.1 3-3 3h-5.2s-2.9.1-2.9 2.9v3.4s-.5 3 5.2 3zm1.5-1.7a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" fill="#ffd43b"/>
-                  </svg>
-                </div>
-                <div class="skill-details">
-                  <h4 class="skill-name">Python</h4>
-                  <p class="skill-tag">Automation &amp; ML</p>
-                </div>
-              </div>
-
-              <!-- HTML5 & CSS3 -->
-              <div class="skill-tile glass-panel">
-                <div class="skill-icon-wrap html-lang">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HTML/CSS Logo">
-                    <rect width="48" height="48" rx="10" fill="#e44d26" />
-                    <text x="24" y="25" font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">HTML</text>
-                    <text x="24" y="37" font-size="11" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">CSS3</text>
-                  </svg>
-                </div>
-                <div class="skill-details">
-                  <h4 class="skill-name">HTML5 &amp; CSS3</h4>
-                  <p class="skill-tag">Semantic &amp; Glass UI</p>
-                </div>
-              </div>
-
+        <div class="pillars-arena">
+          
+          <!-- Master Control Toolbar -->
+          <div class="pillars-toolbar glass-panel">
+            <div class="toolbar-status">
+              <span class="pillar-status-dot"></span>
+              <span class="toolbar-title">Twin 3D Cylindrical Rollers</span>
+              <span class="toolbar-desc">— Controlled with Touchpad (2-finger swipe), mouse drag, or buttons</span>
+            </div>
+            <div class="toolbar-actions">
+              <button class="btn btn-sm btn-outline roll-sync-btn" id="roll-both-btn" type="button" aria-label="Roll Both Cylinders">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                <span>Roll Both Rollers</span>
+              </button>
+              <button class="btn btn-sm btn-subtle autoroll-toggle" id="autoroll-toggle-btn" type="button" aria-label="Toggle Auto Roll">
+                <span id="autoroll-icon">⏸</span>
+                <span id="autoroll-text">Auto-Roll: Active</span>
+              </button>
             </div>
           </div>
 
-          <!-- Category 2: Modern Frameworks & AI Tools -->
-          <div class="skills-category-group">
-            <h3 class="category-heading">
-              <span class="cat-bullet gold"></span>
-              Modern Ecosystem &amp; Emerging Tech
-            </h3>
-            <div class="skills-grid">
-              
-              <!-- Node.js & REST APIs -->
-              <div class="skill-tile glass-panel">
-                <div class="skill-icon-wrap node-lang">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Node & REST APIs">
-                    <rect width="48" height="48" rx="10" fill="#3c873a" />
-                    <text x="24" y="30" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">API</text>
-                  </svg>
+          <div class="pillars-grid">
+            
+            <!-- ROLLER 1: CORE PROGRAMMING LANGUAGES -->
+            <div class="round-pillar pillar-solar" id="pillar-core" data-pillar="core">
+              <div class="pillar-header">
+                <div class="pillar-eyebrow">
+                  <span class="pillar-beacon gold"></span>
+                  <span class="pillar-num">3D CYLINDER ROLLER // 01</span>
                 </div>
-                <div class="skill-details">
-                  <h4 class="skill-name">Node.js &amp; REST APIs</h4>
-                  <p class="skill-tag">Backend Services</p>
+                <h3 class="pillar-heading">Core Programming Languages</h3>
+                <div class="pillar-front-pill gold-pill">
+                  <span class="front-pill-label">FRONT FOCUS:</span>
+                  <span class="front-pill-val" id="pillar-core-name">C Language</span>
                 </div>
               </div>
 
-              <!-- Git & GitHub -->
-              <div class="skill-tile glass-panel">
-                <div class="skill-icon-wrap git-lang">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Git Logo">
-                    <rect width="48" height="48" rx="10" fill="#f05032" />
-                    <path d="M33.2 21.6l-6.8-6.8a2 2 0 0 0-2.8 0l-9.6 9.6a2 2 0 0 0 0 2.8l6.8 6.8a2 2 0 0 0 2.8 0l9.6-9.6a2 2 0 0 0 0-2.8z" fill="#ffffff"/>
-                  </svg>
-                </div>
-                <div class="skill-details">
-                  <h4 class="skill-name">Git &amp; GitHub</h4>
-                  <p class="skill-tag">Version Control</p>
+              <!-- 3D Carousel Stage (Open & Reflective as in photo) -->
+              <div class="carousel-3d-stage" id="stage-core" tabindex="0" role="region" aria-label="3D Core Skills Carousel. Swipe with two fingers on touchpad or drag with mouse to spin.">
+                <div class="stage-floor-reflection gold-floor"></div>
+                <div class="carousel-3d-ring" id="cylinder-core">
+                  <!-- 5 SKILL CARDS IN 3D (Clean, Portrait, Reflective) -->
+                  <div class="carousel-card is-front" data-index="0" data-name="C Language">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container c-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="C Logo">
+                        <rect width="48" height="48" rx="12" fill="#0b69b3" />
+                        <text x="24" y="31" font-size="20" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">C</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">C Language</h4>
+                      <p class="card-tag">Systems &amp; Memory</p>
+                    </div>
+                    <div class="card-pill">Core Systems</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="1" data-name="C++">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container cpp-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="C++ Logo">
+                        <rect width="48" height="48" rx="12" fill="#00599c" />
+                        <text x="24" y="30" font-size="16" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">C++</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">C++</h4>
+                      <p class="card-tag">DSA &amp; OOP Logic</p>
+                    </div>
+                    <div class="card-pill">Algorithms</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="2" data-name="JavaScript (ES6+)">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container js-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JavaScript Logo">
+                        <rect width="48" height="48" rx="12" fill="#f0db4f" />
+                        <text x="24" y="32" font-size="18" font-weight="700" text-anchor="middle" fill="#323330" font-family="'Space Grotesk', sans-serif">JS</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">JavaScript</h4>
+                      <p class="card-tag">Interactive &amp; Async</p>
+                    </div>
+                    <div class="card-pill">ES6+ Dynamic</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="3" data-name="Python">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container py-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Python Logo">
+                        <rect width="48" height="48" rx="12" fill="#295375" />
+                        <path d="M24 10c-5.5 0-5.1 2.4-5.1 2.4l.01 2.5h5.3v.8H16.8s-3.5-.4-3.5 5.1 3 5 3 5h1.8v-2.5s-.1-3 3-3h5.2s2.9-.1 2.9-2.9V13s.5-3-5.2-3zm-1.5 1.7a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm1.7 26.3c5.5 0 5.1-2.4 5.1-2.4l-.01-2.5h-5.3v-.8h7.4s3.5.4 3.5-5.1-3-5-3-5h-1.8v2.5s.1 3-3 3h-5.2s-2.9.1-2.9 2.9v3.4s-.5 3 5.2 3zm1.5-1.7a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" fill="#ffd43b"/>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">Python</h4>
+                      <p class="card-tag">Automation &amp; ML</p>
+                    </div>
+                    <div class="card-pill">Data &amp; Scripting</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="4" data-name="HTML5 &amp; CSS3">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container html-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HTML/CSS Logo">
+                        <rect width="48" height="48" rx="12" fill="#e44d26" />
+                        <text x="24" y="25" font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">HTML</text>
+                        <text x="24" y="37" font-size="11" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">CSS3</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">HTML5 &amp; CSS3</h4>
+                      <p class="card-tag">Semantic &amp; Glass UI</p>
+                    </div>
+                    <div class="card-pill">Modern Styling</div>
+                  </div>
                 </div>
               </div>
 
-              <!-- AI Agents & n8n -->
-              <div class="skill-tile glass-panel">
-                <div class="skill-icon-wrap ai-lang">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI Agents">
-                    <rect width="48" height="48" rx="10" fill="#ff6b6b" />
-                    <text x="24" y="30" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">AI</text>
-                  </svg>
+              <!-- Interactive Controls for Roller 1 -->
+              <div class="pillar-controls">
+                <button class="pillar-roll-btn prev-btn" data-target="core" aria-label="Roll Core Pillar Backward">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  <span>Roll Left</span>
+                </button>
+                <div class="pillar-dots" id="dots-core">
+                  <button class="p-dot active" data-pillar="core" data-idx="0" aria-label="Jump to C Language"></button>
+                  <button class="p-dot" data-pillar="core" data-idx="1" aria-label="Jump to C++"></button>
+                  <button class="p-dot" data-pillar="core" data-idx="2" aria-label="Jump to JavaScript"></button>
+                  <button class="p-dot" data-pillar="core" data-idx="3" aria-label="Jump to Python"></button>
+                  <button class="p-dot" data-pillar="core" data-idx="4" aria-label="Jump to HTML5 &amp; CSS3"></button>
                 </div>
-                <div class="skill-details">
-                  <h4 class="skill-name">AI Agents (n8n)</h4>
-                  <p class="skill-tag">Autonomous Workflows</p>
-                </div>
+                <button class="pillar-roll-btn next-btn" data-target="core" aria-label="Roll Core Pillar Forward">
+                  <span>Roll Right</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
               </div>
-
-              <!-- IBM RAG & Generative AI -->
-              <div class="skill-tile glass-panel">
-                <div class="skill-icon-wrap rag-lang">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="IBM RAG">
-                    <rect width="48" height="48" rx="10" fill="#0f62fe" />
-                    <text x="24" y="30" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">RAG</text>
-                  </svg>
-                </div>
-                <div class="skill-details">
-                  <h4 class="skill-name">IBM RAG &amp; Prompting</h4>
-                  <p class="skill-tag">Gen-AI Applications</p>
-                </div>
+              <div class="pillar-hint">
+                <span class="touchpad-hint-tag">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"></rect><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="12" x2="12" y2="20"></line></svg>
+                  <span>Touchpad: Swipe with 2 fingers or drag to roll</span>
+                </span>
               </div>
-
-              <!-- Figma & UI Design -->
-              <div class="skill-tile glass-panel">
-                <div class="skill-icon-wrap figma-lang">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Figma Logo">
-                    <rect width="48" height="48" rx="10" fill="#1e1e1e" />
-                    <circle cx="24" cy="24" r="10" fill="#a259ff" />
-                    <circle cx="24" cy="14" r="5" fill="#f24e1e" />
-                  </svg>
-                </div>
-                <div class="skill-details">
-                  <h4 class="skill-name">Figma UI/UX</h4>
-                  <p class="skill-tag">Design Systems</p>
-                </div>
-              </div>
-
             </div>
+
+            <!-- ROLLER 2: MODERN ECOSYSTEM & EMERGING TECH -->
+            <div class="round-pillar pillar-cyan" id="pillar-modern" data-pillar="modern">
+              <div class="pillar-header">
+                <div class="pillar-eyebrow">
+                  <span class="pillar-beacon cyan"></span>
+                  <span class="pillar-num">3D CYLINDER ROLLER // 02</span>
+                </div>
+                <h3 class="pillar-heading">Modern Ecosystem &amp; AI</h3>
+                <div class="pillar-front-pill cyan-pill">
+                  <span class="front-pill-label">FRONT FOCUS:</span>
+                  <span class="front-pill-val" id="pillar-modern-name">Node.js &amp; REST APIs</span>
+                </div>
+              </div>
+
+              <!-- 3D Carousel Stage (Open & Reflective as in photo) -->
+              <div class="carousel-3d-stage" id="stage-modern" tabindex="0" role="region" aria-label="3D Modern Skills Carousel. Swipe with two fingers on touchpad or drag with mouse to spin.">
+                <div class="stage-floor-reflection cyan-floor"></div>
+                <div class="carousel-3d-ring" id="cylinder-modern">
+                  <!-- 5 SKILL CARDS IN 3D (Clean, Portrait, Reflective) -->
+                  <div class="carousel-card is-front" data-index="0" data-name="Node.js &amp; REST APIs">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container node-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Node &amp; REST APIs">
+                        <rect width="48" height="48" rx="12" fill="#3c873a" />
+                        <text x="24" y="30" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">API</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">Node.js / APIs</h4>
+                      <p class="card-tag">Backend Services</p>
+                    </div>
+                    <div class="card-pill">Server Runtime</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="1" data-name="Git &amp; GitHub">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container git-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Git Logo">
+                        <rect width="48" height="48" rx="12" fill="#f05032" />
+                        <path d="M33.2 21.6l-6.8-6.8a2 2 0 0 0-2.8 0l-9.6 9.6a2 2 0 0 0 0 2.8l6.8 6.8a2 2 0 0 0 2.8 0l9.6-9.6a2 2 0 0 0 0-2.8z" fill="#ffffff"/>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">Git &amp; GitHub</h4>
+                      <p class="card-tag">Version Control</p>
+                    </div>
+                    <div class="card-pill">Collaboration</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="2" data-name="AI Agents (n8n)">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container ai-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI Agents">
+                        <rect width="48" height="48" rx="12" fill="#ff6b6b" />
+                        <text x="24" y="30" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">AI</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">AI Agents (n8n)</h4>
+                      <p class="card-tag">Autonomous Workflows</p>
+                    </div>
+                    <div class="card-pill">Automation</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="3" data-name="IBM RAG &amp; Prompting">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container rag-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="IBM RAG">
+                        <rect width="48" height="48" rx="12" fill="#0f62fe" />
+                        <text x="24" y="30" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif">RAG</text>
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">IBM RAG</h4>
+                      <p class="card-tag">Gen-AI Applications</p>
+                    </div>
+                    <div class="card-pill">LLM &amp; Vectors</div>
+                  </div>
+
+                  <div class="carousel-card" data-index="4" data-name="Figma UI/UX">
+                    <div class="card-front-glow"></div>
+                    <div class="card-icon-container figma-lang">
+                      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Figma Logo">
+                        <rect width="48" height="48" rx="12" fill="#1e1e1e" />
+                        <circle cx="24" cy="24" r="10" fill="#a259ff" />
+                        <circle cx="24" cy="14" r="5" fill="#f24e1e" />
+                      </svg>
+                    </div>
+                    <div class="card-info">
+                      <h4 class="card-title">Figma UI/UX</h4>
+                      <p class="card-tag">Design Systems</p>
+                    </div>
+                    <div class="card-pill">Prototyping</div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Interactive Controls for Roller 2 -->
+              <div class="pillar-controls">
+                <button class="pillar-roll-btn prev-btn" data-target="modern" aria-label="Roll Modern Pillar Backward">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  <span>Roll Left</span>
+                </button>
+                <div class="pillar-dots" id="dots-modern">
+                  <button class="p-dot active" data-pillar="modern" data-idx="0" aria-label="Jump to Node.js"></button>
+                  <button class="p-dot" data-pillar="modern" data-idx="1" aria-label="Jump to Git &amp; GitHub"></button>
+                  <button class="p-dot" data-pillar="modern" data-idx="2" aria-label="Jump to AI Agents"></button>
+                  <button class="p-dot" data-pillar="modern" data-idx="3" aria-label="Jump to IBM RAG"></button>
+                  <button class="p-dot" data-pillar="modern" data-idx="4" aria-label="Jump to Figma UI/UX"></button>
+                </div>
+                <button class="pillar-roll-btn next-btn" data-target="modern" aria-label="Roll Modern Pillar Forward">
+                  <span>Roll Right</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+              <div class="pillar-hint">
+                <span class="touchpad-hint-tag">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"></rect><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="12" x2="12" y2="20"></line></svg>
+                  <span>Touchpad: Swipe with 2 fingers or drag to roll</span>
+                </span>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -718,37 +825,24 @@
             </div>
           </div>
 
-          <!-- PROJECT 5: Resume & Credentials Portal -->
-          <div class="project-card glass-panel">
-            <div class="project-top">
-              <div class="project-meta-row">
-                <span class="project-badge">Official Document</span>
-                <span class="project-date">Updated 2026</span>
-              </div>
-              <h3 class="project-title">Curriculum Vitae (PDF)</h3>
-              <p class="project-desc">
-                Comprehensive, recruiter-ready curriculum vitae detailing academic achievements, technical projects, and certifications.
-              </p>
-            </div>
-            
-            <div class="project-bottom">
-              <div class="tech-tags">
-                <span class="tag">PDF Format</span>
-                <span class="tag">Verified</span>
-                <span class="tag">ATS-Friendly</span>
-              </div>
-              <div class="project-actions">
-                <a class="btn btn-outline" href="resume.html" target="_blank" rel="noopener">
-                  <span>View Online</span>
-                </a>
-                <a class="btn btn-primary" href="Nabidul%20Hasan%20CV.pdf" download>
-                  <span>Download PDF</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                </a>
-              </div>
-            </div>
-          </div>
+        </div>
 
+        <!-- Credentials & Resume Banner Strip -->
+        <div class="projects-resume-bar glass-panel">
+          <div class="resume-bar-info">
+            <span class="project-badge gold-badge">Verified Credentials</span>
+            <h4 class="resume-bar-title">Curriculum Vitae &amp; Academic Transcripts</h4>
+            <p class="resume-bar-desc">Explore verified academic credentials, complete project methodologies, leadership roles, and honors.</p>
+          </div>
+          <div class="resume-bar-actions">
+            <a class="btn btn-outline" href="resume.html" target="_blank" rel="noopener">
+              <span>View Online CV</span>
+            </a>
+            <a class="btn btn-primary" href="Nabidul%20Hasan%20CV.pdf" download>
+              <span>Download PDF</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -1285,126 +1285,572 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------------
-   8. SKILLS SECTION (TECHNICAL ARSENAL)
+   ABOUT ME SECTION ENHANCEMENT
    -------------------------------------------------------------------------- */
-.skills-catalog {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+#about {
+  overflow-x: clip;
 }
 
-.skills-category-group {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.about-main {
+  transform-origin: center left;
+  will-change: transform, opacity;
 }
 
-.category-heading {
-  font-size: 1.25rem;
-  font-weight: 600;
+.about-sidebar .personality-card,
+.about-sidebar .hobbies-card {
+  will-change: transform, opacity;
+}
+
+/* --------------------------------------------------------------------------
+   8. 3D ROUND PILLARS (TECHNICAL ARSENAL)
+   -------------------------------------------------------------------------- */
+.pillars-arena {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+}
+
+/* Master Control Toolbar */
+.pillars-toolbar {
+  padding: 16px 24px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 20, 32, 0.7);
+}
+
+.toolbar-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pillar-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold-400);
+  box-shadow: 0 0 10px var(--gold-glow);
+  animation: pulseBullet 2s infinite;
+}
+
+.toolbar-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
   color: var(--text-pure);
 }
 
-.cat-bullet {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-  position: relative;
-  display: inline-block;
+.toolbar-desc {
+  font-size: 0.85rem;
+  color: var(--text-dim);
 }
 
-.cat-bullet::after {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  animation: pulseBullet 2.4s ease-in-out infinite;
-}
-
-.cat-bullet.gold {
-  background-color: var(--gold-400);
-  box-shadow: 0 0 12px var(--gold-glow);
-}
-
-.cat-bullet.gold::after {
-  border-color: rgba(245, 215, 127, 0.6);
-}
-
-@keyframes pulseBullet {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.6);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.skill-tile {
-  padding: 22px;
+.toolbar-actions {
   display: flex;
   align-items: center;
-  gap: 18px;
-  border-radius: var(--radius-md);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
-              box-shadow 0.35s ease,
-              border-color 0.35s ease,
-              background 0.35s ease;
-  will-change: transform, box-shadow;
+  gap: 12px;
 }
 
-/* Glass Light Sheen Sweep Animation */
-.skill-tile::after {
+.roll-sync-btn svg {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.roll-sync-btn:hover svg {
+  transform: rotate(180deg);
+}
+
+/* Pillars Arena Grid */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.round-pillar {
+  padding: 32px 24px 28px 24px;
+  border-radius: var(--radius-lg);
+  background: rgba(14, 19, 32, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.round-pillar::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -130%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
-  transform: skewX(-25deg);
-  transition: left 0.75s ease;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-beam, var(--gold-400)), transparent);
+}
+
+.pillar-solar {
+  --pillar-accent: #f5d77f;
+  --pillar-accent-glow: rgba(245, 215, 127, 0.4);
+  --pillar-accent-bg: rgba(245, 215, 127, 0.12);
+  --accent-beam: #f5d77f;
+}
+
+.pillar-cyan {
+  --pillar-accent: #38bdf8;
+  --pillar-accent-glow: rgba(56, 189, 248, 0.4);
+  --pillar-accent-bg: rgba(56, 189, 248, 0.12);
+  --accent-beam: #38bdf8;
+}
+
+/* Pillar Header */
+.pillar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 5;
+}
+
+.pillar-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pillar-beacon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pillar-beacon.gold {
+  background: var(--gold-400);
+  box-shadow: 0 0 10px var(--gold-glow);
+}
+
+.pillar-beacon.cyan {
+  background: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+}
+
+.pillar-num {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.pillar-heading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-pure);
+  font-family: var(--font-heading);
+}
+
+.pillar-front-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+}
+
+.gold-pill {
+  background: rgba(245, 215, 127, 0.1);
+  border: 1px solid rgba(245, 215, 127, 0.3);
+  color: var(--gold-300);
+}
+
+.cyan-pill {
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #7dd3fc;
+}
+
+.front-pill-label {
+  opacity: 0.75;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.front-pill-val {
+  font-weight: 700;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+/* 3D Pillar Body Architecture */
+.pillar-body {
+  position: relative;
+  width: 100%;
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* ==========================================================================
+   3D CAROUSEL CYLINDRICAL ROLLER (MATCHING USER REFERENCE PHOTO)
+   - Open, uncluttered 3D stage with dark reflective floor
+   - Portrait, rounded-corner cards standing upright in 3D circular ring
+   - Authentic glossy floor reflection (-webkit-box-reflect)
+   - ABSOLUTELY ZERO BLUR: 100% crystal-clear text & high-def icons
+   - Front focus card highlighted in size (scale 1.15) and vibrant neon glow
+   ========================================================================== */
+
+.carousel-3d-stage {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  perspective: 1100px;
+  perspective-origin: 50% 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  outline: none;
+  overflow: visible;
+  padding: 10px 0;
+}
+
+.carousel-3d-stage:active {
+  cursor: grabbing;
+}
+
+.carousel-3d-stage.is-dragging {
+  cursor: grabbing;
+}
+
+/* Floor Reflection Ambient Plane */
+.stage-floor-reflection {
+  position: absolute;
+  bottom: 12px;
+  width: 80%;
+  max-width: 440px;
+  height: 48px;
+  border-radius: 50%;
+  filter: blur(20px);
   pointer-events: none;
+  opacity: 0.55;
+  z-index: 1;
 }
 
-.skill-tile:hover {
-  transform: translateY(-8px) scale(1.025);
-  border-color: rgba(245, 215, 127, 0.6);
-  background: rgba(22, 28, 42, 0.85);
-  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.7), 0 0 25px rgba(245, 215, 127, 0.22);
+.stage-floor-reflection.gold-floor {
+  background: radial-gradient(ellipse at center, rgba(245, 215, 127, 0.25) 0%, transparent 70%);
 }
 
-.skill-tile:hover::after {
-  left: 150%;
+.stage-floor-reflection.cyan-floor {
+  background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.25) 0%, transparent 70%);
+}
+
+/* The 3D Rotating Ring */
+.carousel-3d-ring {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.2, 0.85, 0.3, 1);
+  will-change: transform;
+}
+
+.carousel-3d-stage.is-dragging .carousel-3d-ring {
+  transition: none !important;
+}
+
+/* Portrait Skill Cards in 3D Space (Zero blur, crisp, with floor reflection) */
+.carousel-card {
+  position: absolute;
+  width: 190px;
+  height: 230px;
+  left: calc(50% - 95px);
+  top: calc(50% - 130px);
+  transform-style: preserve-3d;
+  border-radius: 20px;
+  padding: 22px 16px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  cursor: pointer;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  
+  /* CRITICAL: Glossy Floor Reflection exactly as in user's reference photo */
+  -webkit-box-reflect: below 6px linear-gradient(to bottom, transparent 65%, rgba(255, 255, 255, 0.16) 100%);
+  
+  /* CRITICAL: ZERO BLUR - Completely sharp and readable */
+  filter: none !important;
+  background: linear-gradient(150deg, rgba(22, 28, 44, 0.94) 0%, rgba(10, 14, 24, 0.98) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  
+  opacity: 0.72;
+  transition: transform 0.5s cubic-bezier(0.2, 0.85, 0.3, 1),
+              opacity 0.4s ease,
+              border-color 0.4s ease,
+              box-shadow 0.4s ease;
+}
+
+/* Card Icon Box */
+.card-icon-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease;
+}
+
+.card-icon-container svg {
+  width: 42px;
+  height: 42px;
+}
+
+/* Card Info */
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+}
+
+.card-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  font-family: var(--font-heading);
+}
+
+.card-tag {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  font-weight: 500;
+  font-family: var(--font-mono);
+}
+
+/* Bottom Category / Level Pill */
+.card-pill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-dim);
+  transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   FRONT CARD HIGHLIGHT IN SIZE & COLOR (AS REQUESTED)
+   ========================================================================== */
+.carousel-card.is-front {
+  opacity: 1 !important;
+  z-index: 60 !important;
+}
+
+/* Solar Roller: Front Focus (Gold) */
+.pillar-solar .carousel-card.is-front {
+  border: 2px solid #f5d77f !important;
+  background: linear-gradient(150deg, rgba(32, 38, 56, 0.96) 0%, rgba(14, 18, 30, 0.99) 100%) !important;
+  box-shadow: 0 0 35px rgba(245, 215, 127, 0.5),
+              0 20px 50px rgba(0, 0, 0, 0.8),
+              inset 0 0 20px rgba(245, 215, 127, 0.12) !important;
+}
+
+.pillar-solar .carousel-card.is-front .card-icon-container {
+  transform: scale(1.1);
+  border-color: rgba(245, 215, 127, 0.4);
+  box-shadow: 0 0 20px rgba(245, 215, 127, 0.35);
+}
+
+.pillar-solar .carousel-card.is-front .card-title {
+  color: #ffffff !important;
+  text-shadow: 0 0 16px rgba(245, 215, 127, 0.6);
+}
+
+.pillar-solar .carousel-card.is-front .card-tag {
+  color: #f5d77f !important;
+  font-weight: 600;
+}
+
+.pillar-solar .carousel-card.is-front .card-pill {
+  background: rgba(245, 215, 127, 0.18) !important;
+  border-color: rgba(245, 215, 127, 0.5) !important;
+  color: #ffe58f !important;
+}
+
+/* Cyan Roller: Front Focus (Cyan) */
+.pillar-cyan .carousel-card.is-front {
+  border: 2px solid #38bdf8 !important;
+  background: linear-gradient(150deg, rgba(24, 36, 56, 0.96) 0%, rgba(10, 16, 28, 0.99) 100%) !important;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.5),
+              0 20px 50px rgba(0, 0, 0, 0.8),
+              inset 0 0 20px rgba(56, 189, 248, 0.12) !important;
+}
+
+.pillar-cyan .carousel-card.is-front .card-icon-container {
+  transform: scale(1.1);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+}
+
+.pillar-cyan .carousel-card.is-front .card-title {
+  color: #ffffff !important;
+  text-shadow: 0 0 16px rgba(56, 189, 248, 0.6);
+}
+
+.pillar-cyan .carousel-card.is-front .card-tag {
+  color: #7dd3fc !important;
+  font-weight: 600;
+}
+
+.pillar-cyan .carousel-card.is-front .card-pill {
+  background: rgba(56, 189, 248, 0.18) !important;
+  border-color: rgba(56, 189, 248, 0.5) !important;
+  color: #bae6fd !important;
+}
+
+/* Roller Interactive Controls */
+.pillar-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.pillar-roll-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-pure);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pillar-solar .pillar-roll-btn:hover {
+  background: rgba(245, 215, 127, 0.15);
+  border-color: rgba(245, 215, 127, 0.4);
+  color: #fff;
+  box-shadow: 0 0 16px rgba(245, 215, 127, 0.3);
+  transform: translateY(-2px);
+}
+
+.pillar-cyan .pillar-roll-btn:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #fff;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+  transform: translateY(-2px);
+}
+
+.pillar-roll-btn:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+/* Jump Dots */
+.pillar-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.p-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.p-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.2);
+}
+
+.pillar-solar .p-dot.active {
+  width: 26px;
+  background: var(--gold-400);
+  box-shadow: 0 0 12px var(--gold-glow);
+  border-color: var(--gold-300);
+}
+
+.pillar-cyan .p-dot.active {
+  width: 26px;
+  background: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+  border-color: #7dd3fc;
+}
+
+.pillar-hint {
+  text-align: center;
+  margin-top: 14px;
+}
+
+.touchpad-hint-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+}
+
+.touchpad-hint-tag svg {
+  color: var(--pillar-accent);
+}
+
+/* Generic skill tile styles retained */
+.skill-tile {
+  border-radius: var(--radius-md);
+  position: relative;
+  cursor: pointer;
 }
 
 .skill-icon-wrap {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -1415,18 +1861,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .skill-icon-wrap svg {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   transition: transform 0.35s ease;
-}
-
-.skill-tile:hover .skill-icon-wrap {
-  transform: scale(1.12) rotate(4deg);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6), 0 0 18px rgba(245, 215, 127, 0.35);
-}
-
-.skill-tile:hover .skill-icon-wrap svg {
-  transform: scale(1.05);
 }
 
 .skill-details {
@@ -1436,24 +1873,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .skill-name {
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 600;
   color: var(--text-pure);
   transition: color 0.3s ease;
 }
 
-.skill-tile:hover .skill-name {
-  color: #ffffff;
-}
-
 .skill-tag {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-dim);
   transition: color 0.3s ease;
-}
-
-.skill-tile:hover .skill-tag {
-  color: var(--gold-300);
 }
 
 /* --------------------------------------------------------------------------
@@ -1612,6 +2041,101 @@ h1, h2, h3, h4, h5, h6 {
   padding: 4px 12px;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Credentials & Resume Banner Strip in Projects */
+.projects-resume-bar {
+  margin-top: 32px;
+  padding: 26px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(245, 215, 127, 0.25);
+  background: linear-gradient(135deg, rgba(245, 215, 127, 0.08) 0%, rgba(15, 20, 32, 0.9) 100%);
+  flex-wrap: wrap;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.resume-bar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 650px;
+}
+
+.resume-bar-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--text-pure);
+}
+
+.resume-bar-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.resume-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Responsive adjustments for 3D Pillars */
+@media (max-width: 1024px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-3d-stage {
+    height: 330px;
+  }
+  .carousel-card {
+    width: 155px;
+    height: 195px;
+    left: calc(50% - 77px);
+    top: calc(50% - 110px);
+    padding: 16px 12px 14px 12px;
+    border-radius: 16px;
+  }
+  .card-icon-container {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+  .card-icon-container svg {
+    width: 32px;
+    height: 32px;
+  }
+  .card-title {
+    font-size: 0.95rem;
+  }
+  .card-tag {
+    font-size: 0.72rem;
+  }
+  .card-pill {
+    font-size: 0.62rem;
+    padding: 3px 8px;
+  }
+    font-size: 0.92rem;
+  }
+  .skill-tag {
+    font-size: 0.74rem;
+  }
+  .cap-outer-ring, .cap-pedestal-base {
+    width: 200px;
+  }
+  .projects-resume-bar {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -2704,21 +3228,24 @@ h1, h2, h3, h4, h5, h6 {
 
 /* C. FLIPPING SECTION (Education Cards 3D Interactive Perspective) */
 .flipping-section {
-  perspective: 1400px;
+  perspective: 1500px;
+}
+
+.education-grid {
+  perspective: 1500px;
 }
 
 .flipping-section .edu-card {
-  opacity: 1;
-  visibility: visible;
   transform-style: preserve-3d;
-  perspective: 1200px;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
   transform-origin: center center;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .flipping-section .edu-card:hover {
-  transform: perspective(1200px) rotateY(6deg) rotateX(3deg) translateY(-8px) scale(1.015);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 215, 127, 0.2);
+  transform: perspective(1200px) rotateY(6deg) rotateX(3deg) translateY(-8px) scale(1.025);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 215, 127, 0.3);
   border-color: rgba(245, 215, 127, 0.6);
 }
 

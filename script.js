@@ -241,66 +241,123 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Skills Category Headings Entrance
-    gsap.fromTo(
-      '.skills-category-group .category-heading',
-      { x: -35, opacity: 0.2 },
-      {
-        scrollTrigger: {
-          trigger: '#skills',
-          start: 'top 85%',
-          once: true
-        },
-        x: 0,
-        opacity: 1,
-        duration: 0.7,
-        stagger: 0.14,
-        ease: 'power2.out',
-        clearProps: 'all'
-      }
-    );
+    // 1. ABOUT ME: Section 1 enters from left with zoom-out animation whenever reached
+    const aboutMain = document.querySelector('.about-main');
+    const personalityCard = document.querySelector('.personality-card');
+    const hobbiesCard = document.querySelector('.hobbies-card');
 
-    // Staggered Skill Tiles 3D Pop & Entrance
+    if (aboutMain) {
+      gsap.fromTo(
+        aboutMain,
+        {
+          x: -160,
+          scale: 1.18,
+          opacity: 0
+        },
+        {
+          scrollTrigger: {
+            trigger: '#about',
+            start: 'top 82%',
+            toggleActions: 'play reverse play reverse'
+          },
+          x: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 1.05,
+          ease: 'power3.out',
+          clearProps: 'transform'
+        }
+      );
+    }
+
+    if (personalityCard && hobbiesCard) {
+      gsap.fromTo(
+        [personalityCard, hobbiesCard],
+        {
+          x: 75,
+          opacity: 0
+        },
+        {
+          scrollTrigger: {
+            trigger: '#about',
+            start: 'top 80%',
+            toggleActions: 'play reverse play reverse'
+          },
+          x: 0,
+          opacity: 1,
+          duration: 0.85,
+          stagger: 0.16,
+          ease: 'power2.out',
+          clearProps: 'transform'
+        }
+      );
+    }
+
+    // 2. TECHNICAL SKILLS: 3D Round Pillars Entrance Animation
     gsap.fromTo(
-      '.skill-tile',
-      { y: 30, opacity: 0.15, scale: 0.94 },
+      '.round-pillar',
+      { y: 45, opacity: 0, scale: 0.95 },
       {
         scrollTrigger: {
           trigger: '#skills',
           start: 'top 82%',
-          once: true
+          toggleActions: 'play reverse play reverse'
         },
         y: 0,
         opacity: 1,
         scale: 1,
-        duration: 0.6,
-        stagger: {
-          amount: 0.45,
-          from: 'start'
-        },
-        ease: 'back.out(1.3)',
-        clearProps: 'all'
+        duration: 0.85,
+        stagger: 0.2,
+        ease: 'power2.out',
+        clearProps: 'transform'
       }
     );
 
-    // Project Cards Reveal
-    gsap.fromTo(
-      '.project-card',
-      { y: 35, opacity: 0.2 },
-      {
-        scrollTrigger: {
-          trigger: '#projects',
-          start: 'top 82%',
-          once: true
+    // 3. PROJECTS: 4 Sections with Fade-In Animation whenever reached
+    const projectCards = gsap.utils.toArray('.project-card');
+    projectCards.forEach((card) => {
+      gsap.fromTo(
+        card,
+        {
+          opacity: 0,
+          y: 50,
+          scale: 0.96
         },
-        y: 0,
-        opacity: 1,
-        duration: 0.7,
-        stagger: 0.15,
-        ease: 'power2.out',
-        clearProps: 'all'
-      }
-    );
+        {
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            toggleActions: 'play reverse play reverse'
+          },
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.85,
+          ease: 'power2.out',
+          clearProps: 'transform'
+        }
+      );
+    });
+
+    const resumeBar = document.querySelector('.projects-resume-bar');
+    if (resumeBar) {
+      gsap.fromTo(
+        resumeBar,
+        { opacity: 0, y: 35 },
+        {
+          scrollTrigger: {
+            trigger: resumeBar,
+            start: 'top 88%',
+            toggleActions: 'play reverse play reverse'
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          clearProps: 'transform'
+        }
+      );
+    }
 
     // Rolling from Left to Right: Experience Timeline (Safe fromTo, never stuck)
     gsap.fromTo(
@@ -321,23 +378,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     );
 
-    // 3D Flipping in Education Section (Safe fromTo, never stuck sideways)
+    // 3D Flipping in Education Section (Flip Card Reveal whenever reached)
     gsap.fromTo(
       '.flipping-section .edu-card',
-      { rotationY: -35, opacity: 0.25, y: 25 },
+      {
+        rotationY: -90,
+        opacity: 0,
+        scale: 0.82,
+        y: 35,
+        transformPerspective: 1200
+      },
       {
         scrollTrigger: {
           trigger: '#education',
-          start: 'top 85%',
-          once: true
+          start: 'top 82%',
+          toggleActions: 'play reverse play reverse'
         },
         rotationY: 0,
         opacity: 1,
+        scale: 1,
         y: 0,
-        duration: 0.9,
-        stagger: 0.15,
-        ease: 'back.out(1.2)',
-        clearProps: 'all'
+        duration: 0.95,
+        stagger: 0.16,
+        ease: 'back.out(1.35)',
+        clearProps: 'transform'
       }
     );
 
@@ -382,6 +446,251 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
+     4.5 3D ROUND PILLARS CONTROLLER (ROLLABLE CYLINDER WITH FRONT HIGHLIGHT)
+     -------------------------------------------------------------------------- */
+  const init3DRoundPillars = () => {
+    const pillars = [
+      {
+        id: 'core',
+        pillarEl: document.getElementById('pillar-core'),
+        cylinderEl: document.getElementById('cylinder-core'),
+        stageEl: document.getElementById('stage-core'),
+        dotsContainer: document.getElementById('dots-core'),
+        nameDisplay: document.getElementById('pillar-core-name'),
+        prevBtn: document.querySelector('.prev-btn[data-target="core"]'),
+        nextBtn: document.querySelector('.next-btn[data-target="core"]'),
+        rotation: 0,
+        itemCount: 5,
+        stepAngle: 72
+      },
+      {
+        id: 'modern',
+        pillarEl: document.getElementById('pillar-modern'),
+        cylinderEl: document.getElementById('cylinder-modern'),
+        stageEl: document.getElementById('stage-modern'),
+        dotsContainer: document.getElementById('dots-modern'),
+        nameDisplay: document.getElementById('pillar-modern-name'),
+        prevBtn: document.querySelector('.prev-btn[data-target="modern"]'),
+        nextBtn: document.querySelector('.next-btn[data-target="modern"]'),
+        rotation: 0,
+        itemCount: 5,
+        stepAngle: 72
+      }
+    ];
+
+    let globalAutoRollActive = true;
+    const autorollToggleBtn = document.getElementById('autoroll-toggle-btn');
+    const autorollIcon = document.getElementById('autoroll-icon');
+    const autorollText = document.getElementById('autoroll-text');
+    const rollBothBtn = document.getElementById('roll-both-btn');
+
+    const getRadius = () => {
+      return window.innerWidth <= 600 ? 175 : 245;
+    };
+
+    pillars.forEach((p) => {
+      if (!p.pillarEl || !p.cylinderEl || !p.stageEl) return;
+
+      const cards = p.cylinderEl.querySelectorAll('.carousel-card, .pillar-card');
+      const dots = p.dotsContainer ? p.dotsContainer.querySelectorAll('.p-dot') : [];
+
+      const updatePillar = (animate = true) => {
+        const radius = getRadius();
+        if (!animate) {
+          p.cylinderEl.style.transition = 'none';
+        } else {
+          p.cylinderEl.style.transition = 'transform 0.65s cubic-bezier(0.2, 0.85, 0.3, 1)';
+        }
+
+        p.cylinderEl.style.transform = `rotateY(${p.rotation}deg)`;
+
+        // Calculate front index
+        const normalized = ((-p.rotation % 360) + 360) % 360;
+        const frontIdx = Math.round(normalized / p.stepAngle) % p.itemCount;
+
+        cards.forEach((card, idx) => {
+          const angle = idx * p.stepAngle;
+          const isFront = idx === frontIdx;
+
+          if (isFront) {
+            card.classList.add('is-front');
+            card.style.transform = `rotateY(${angle}deg) translateZ(${radius + 24}px) scale(1.15)`;
+            card.style.zIndex = '50';
+            if (p.nameDisplay) {
+              p.nameDisplay.textContent = card.getAttribute('data-name') || '';
+            }
+          } else {
+            card.classList.remove('is-front');
+            card.style.transform = `rotateY(${angle}deg) translateZ(${radius}px) scale(0.88)`;
+            card.style.zIndex = '5';
+          }
+        });
+
+        // Update jump dots
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === frontIdx);
+        });
+      };
+
+      p.update = updatePillar;
+
+      // Set initial 3D positions
+      updatePillar(false);
+
+      // Roll Left / Prev button
+      if (p.prevBtn) {
+        p.prevBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          p.rotation += p.stepAngle;
+          updatePillar(true);
+        });
+      }
+
+      // Roll Right / Next button
+      if (p.nextBtn) {
+        p.nextBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          p.rotation -= p.stepAngle;
+          updatePillar(true);
+        });
+      }
+
+      // Dot click controls to jump to specific skill
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const targetIdx = parseInt(dot.getAttribute('data-idx') || '0', 10);
+          const currentNorm = ((-p.rotation % 360) + 360) % 360;
+          const currentIdx = Math.round(currentNorm / p.stepAngle) % p.itemCount;
+          let diff = targetIdx - currentIdx;
+          if (diff > 2) diff -= 5;
+          if (diff < -2) diff += 5;
+          p.rotation -= diff * p.stepAngle;
+          updatePillar(true);
+        });
+      });
+
+      // Click any card to rotate it directly to front
+      cards.forEach((card, idx) => {
+        card.addEventListener('click', (e) => {
+          const normalized = ((-p.rotation % 360) + 360) % 360;
+          const currentIdx = Math.round(normalized / p.stepAngle) % p.itemCount;
+          if (idx !== currentIdx) {
+            e.stopPropagation();
+            let diff = idx - currentIdx;
+            if (diff > 2) diff -= 5;
+            if (diff < -2) diff += 5;
+            p.rotation -= diff * p.stepAngle;
+            updatePillar(true);
+          }
+        });
+      });
+
+      // Touchpad 2-Finger Swipe & Wheel Interaction
+      let wheelTimeout;
+      p.stageEl.addEventListener('wheel', (e) => {
+        const absX = Math.abs(e.deltaX);
+        const absY = Math.abs(e.deltaY);
+        // Trackpad horizontal swipe produces deltaX, vertical swipe or wheel produces deltaY
+        const delta = absX >= absY ? e.deltaX : e.deltaY;
+
+        if (Math.abs(delta) > 1.5) {
+          e.preventDefault();
+          p.cylinderEl.style.transition = 'none';
+          // Rotate cylinder in real time with touchpad swipe
+          p.rotation -= delta * 0.38;
+          updatePillar(false);
+
+          // Clear previous timeout and snap to nearest card angle on gesture release
+          clearTimeout(wheelTimeout);
+          wheelTimeout = setTimeout(() => {
+            p.rotation = Math.round(p.rotation / p.stepAngle) * p.stepAngle;
+            updatePillar(true);
+          }, 140);
+        }
+      }, { passive: false });
+
+      // Pointer drag / swipe handling
+      let startX = 0;
+      let startRotation = 0;
+      let isDragging = false;
+
+      const onPointerDown = (e) => {
+        isDragging = true;
+        startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+        startRotation = p.rotation;
+        p.stageEl.classList.add('is-dragging');
+        p.cylinderEl.style.transition = 'none';
+      };
+
+      const onPointerMove = (e) => {
+        if (!isDragging) return;
+        const currentX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+        const deltaX = currentX - startX;
+        p.rotation = startRotation + deltaX * 0.45;
+        updatePillar(false);
+      };
+
+      const onPointerUp = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        p.stageEl.classList.remove('is-dragging');
+        // Snap to nearest 72-degree multiple
+        p.rotation = Math.round(p.rotation / p.stepAngle) * p.stepAngle;
+        updatePillar(true);
+      };
+
+      p.stageEl.addEventListener('mousedown', onPointerDown);
+      window.addEventListener('mousemove', onPointerMove);
+      window.addEventListener('mouseup', onPointerUp);
+
+      p.stageEl.addEventListener('touchstart', onPointerDown, { passive: true });
+      window.addEventListener('touchmove', onPointerMove, { passive: true });
+      window.addEventListener('touchend', onPointerUp);
+
+      // Auto-Roll interval (pause on hover/drag)
+      let hoverPaused = false;
+      p.pillarEl.addEventListener('mouseenter', () => { hoverPaused = true; });
+      p.pillarEl.addEventListener('mouseleave', () => { hoverPaused = false; });
+
+      setInterval(() => {
+        if (globalAutoRollActive && !hoverPaused && !isDragging) {
+          p.rotation -= p.stepAngle;
+          updatePillar(true);
+        }
+      }, 4200);
+    });
+
+    // Roll Both Pillars Master Button
+    if (rollBothBtn) {
+      rollBothBtn.addEventListener('click', () => {
+        pillars.forEach((p) => {
+          p.rotation -= p.stepAngle;
+          if (p.update) p.update(true);
+        });
+      });
+    }
+
+    // Toggle Auto-Roll button
+    if (autorollToggleBtn) {
+      autorollToggleBtn.addEventListener('click', () => {
+        globalAutoRollActive = !globalAutoRollActive;
+        if (autorollIcon) autorollIcon.textContent = globalAutoRollActive ? '⏸' : '▶';
+        if (autorollText) autorollText.textContent = globalAutoRollActive ? 'Auto-Roll: Active' : 'Auto-Roll: Paused';
+      });
+    }
+
+    // Window resize handler
+    window.addEventListener('resize', () => {
+      pillars.forEach((p) => {
+        if (p.update) p.update(false);
+      });
+    });
+  };
+
+  // Initialize the pillars controller
+  init3DRoundPillars();
+
+  /* --------------------------------------------------------------------------
      5. STAT COUNTER ANIMATION
      -------------------------------------------------------------------------- */
   const counterElements = document.querySelectorAll('[data-counter]');
@@ -419,10 +728,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     6. CARD 3D TILT ON HOVER
+     6. CARD 3D TILT ON HOVER (Projects)
      -------------------------------------------------------------------------- */
   if (!prefersReducedMotion && window.innerWidth > 900) {
-    const tiltCards = document.querySelectorAll('.project-card, .skill-tile');
+    const tiltCards = document.querySelectorAll('.project-card');
 
     tiltCards.forEach((card) => {
       card.addEventListener('mousemove', (e) => {
@@ -833,9 +1142,9 @@ void print_puzzle(int puzzle[9][9]) {
   /* --------------------------------------------------------------------------
      12. CONTENT VISIBILITY FAILSAFE
      -------------------------------------------------------------------------- */
-  // Guarantee that Experience, Leadership, Education, and Skills are NEVER left unloaded
+  // Guarantee that Experience, Leadership, Education, and Sections are NEVER left unloaded
   const ensureContentVisibility = () => {
-    document.querySelectorAll('.timeline-item, .edu-card, .honor-card, .cert-card, .skill-tile, .category-heading').forEach((el) => {
+    document.querySelectorAll('.timeline-item, .edu-card, .honor-card, .cert-card, .category-heading, .round-pillar').forEach((el) => {
       el.style.opacity = '1';
       el.style.visibility = 'visible';
     });
